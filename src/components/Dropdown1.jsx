@@ -1,6 +1,7 @@
 import { Link, useParams, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import sampleData from "./Data.js";
+import bgImage from "../assets/product-1_bg.jpg"
 
 const MainPage = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const MainPage = () => {
       <div className="w-[70%] p-6">
         <h1 className="text-2xl font-bold mb-4">Chemical Compounds</h1>
         <img
-          src="/chemical-banner.jpg"
+          src={bgImage}
           alt="Chemical Banner"
           className="w-full h-40 object-cover rounded-md mb-4"
         />
@@ -38,11 +39,11 @@ const MainPage = () => {
               key={item.id}
               className="bg-gray-100 text-black p-4 rounded-md flex items-center shadow-md"
             >
-              <Link to={`/services/web-development/${item.id}`} className="mr-4">
+              <Link to={`/services/web-development/${item.name}`} className="mr-4">
                 <img src={item.image} alt={item.name} className="w-24 h-24 rounded-md" />
               </Link>
               <div>
-                <Link to={`/services/web-development/${item.id}`}>
+                <Link to={`/services/web-development/${item.name}`}>
                   <h2 className="font-bold hover:underline cursor-pointer">{item.name}</h2>
                 </Link>
                 <p>Product Number: {item.productNumber}</p>
@@ -52,7 +53,7 @@ const MainPage = () => {
               </div>
               <div className="ml-auto text-right">
                 <p className="text-orange-500 font-semibold">Pending QC</p>
-                <Link to={`/services/web-development/${item.id}`} className="text-blue-500 underline">
+                <Link to={`/services/web-development/${item.name}`} className="text-blue-500 underline">
                   See more size options
                 </Link>
               </div>

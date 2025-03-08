@@ -4,7 +4,11 @@ const HeroSection = () => {
   return (
     <div 
       className=" w-full h-[350px] bg-cover bg-center flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      style={{ backgroundImage: `url(${bgImage})` ,
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundBlendMode: "overlay"
+
+      }}
     >
       {/* Overlay */}
       <div className="inset-0 bg-black opacity-50"></div>
@@ -17,7 +21,7 @@ const HeroSection = () => {
         <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6">
           High-quality reference standards from our lab to yours
         </p>
-        <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer text-white font-semibold rounded-lg">
+        <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer text-white font-semibold">
           Browse Catalog
         </button>
       </div>
