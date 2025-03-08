@@ -3,7 +3,7 @@ const sampleData = [
       id: 1,
       image: "/chemical1.jpg",
       title: "Introduction",
-      name: "(1R-cis)-Milnacipran Hydrochloride",
+      name: "1R-cis-MilnacipranHydrochloride",
       productNumber: "ACA-160613-0004",
       parentDrug: "Milnacipran",
       casNumber: "175131-61-0",
