@@ -62,15 +62,15 @@ const MainPage = () => {
       </div>
 
       {/* Right Section (30%) */}
-      <div className="w-[30%] p-6 bg-gray-900 text-white">
+      <div className="w-[30%] p-6 bg-white text-black">
         <h2 className="text-xl font-semibold mb-4">Services</h2>
         <ul>
           {services.map((service) => (
             <li key={service.path}>
               <Link
                 to={service.path}
-                className={`block p-2 rounded-md ${
-                  activeSection === service.path ? "bg-blue-500" : "hover:bg-gray-700"
+                className={`block p-2 ${
+                  activeSection === service.path ? "bg-blue-500" : "hover:bg-blue-500"
                 }`}
               >
                 {service.name}

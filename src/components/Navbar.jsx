@@ -2,11 +2,14 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Icons
 import { motion, AnimatePresence } from "framer-motion"; // Smooth animation
+import sampleData from './Data'; // Import sampleData
 
 const Navbar = () => {
   const { id } = useParams(); // Getting dynamic ID from URL
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   let timeoutId = null; // Timeout to prevent flickering
 
   const handleMouseEnter = (menu) => {
@@ -15,7 +18,21 @@ const Navbar = () => {
   };
 
   const handleMouseLeave = () => {
-    timeoutId = setTimeout(() => setActiveDropdown(null), 300); // Delay before hiding
+    timeoutId = setTimeout(() => setActiveDropdown(null), 300 )// Delay before hiding
+  };
+
+  const handleSearch = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.length > 0) {
+      const filteredResults = sampleData.filter((item) =>
+        item.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(filteredResults);
+    } else {
+      setSearchResults([]);
+    }
   };
 
   // Dropdown Links with dynamic params
@@ -104,6 +121,32 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Search Bar */}
+        <div className="relative md:flex hidden">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={handleSearch}
+            className="bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600"
+          />
+          {searchResults.length > 0 && (
+            <ul className="absolute top-12 right-0 w-64 bg-gray-800 text-white rounded shadow-lg">
+              {searchResults.map((result) => (
+                <li key={result.id} className="border-b border-gray-700 last:border-none">
+                  <Link
+                    to={`${result.link1}`} // Example: Generate path dynamically
+                    className="block px-4 py-2 hover:bg-gray-700"
+                    onClick={() => setSearchResults([])}
+                  >
+                    {result.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
