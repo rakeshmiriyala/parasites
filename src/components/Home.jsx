@@ -2,9 +2,8 @@ import React from 'react'
 import Navbar from './Navbar'
 import HeroSection from './Hero'
 import NewsPage from './ImageSection'
-import SubscribeSection from './Updates'
-import CardsSection from './Newrequirement'
 import Footer from './Footer'
+import OurExperts from './Experts'
 
 const Home = () => {
   return (
@@ -12,8 +11,7 @@ const Home = () => {
       <Navbar/>
       <HeroSection/>
       <NewsPage/>
-      <SubscribeSection/>
-      <CardsSection/>
+      <OurExperts/>
       <Footer/>
     </>
   )
