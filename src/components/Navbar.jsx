@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Icons
 import { motion, AnimatePresence } from "framer-motion"; // Smooth animation
 import sampleData from './Data'; // Import sampleData
-import Logo from "../assets/Logo.png"
+import Logo from "../assets/Logo.jpg"
 const Navbar = () => {
   const { id } = useParams(); // Getting dynamic ID from URL
   const [isOpen, setIsOpen] = useState(false);
@@ -76,7 +76,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold flex items-center">
-          <img src={Logo} alt="Logo" className="h-10 w-auto mr-2" />
+          <img src={Logo} alt="Logo" className="h-16 w-auto mr-2" />
         </Link>
 
         {/* Desktop Navigation */}
