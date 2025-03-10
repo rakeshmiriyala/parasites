@@ -3,7 +3,7 @@ import bgImage from "../assets/Hero_bg.jpg";
 const HeroSection = () => {
   return (
     <div 
-      className=" w-full h-[350px] bg-cover bg-center flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32"
+      className=" w-full h-screen bg-cover bg-center flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32"
       style={{ backgroundImage: `url(${bgImage})` ,
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         backgroundBlendMode: "overlay"

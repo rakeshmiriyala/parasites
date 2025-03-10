@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Icons
 import { motion, AnimatePresence } from "framer-motion"; // Smooth animation
 import sampleData from './Data'; // Import sampleData
-import Logo from "../assets/Logo.jpg"
+import Logo from "../assets/Logo.png"
 const Navbar = () => {
   const { id } = useParams(); // Getting dynamic ID from URL
   const [isOpen, setIsOpen] = useState(false);
@@ -37,37 +37,31 @@ const Navbar = () => {
 
   // Dropdown Links with dynamic params
   const menuLinks = {
+    Home: [
+      { name: "Home", path: `/` },
+      { name: "Home", path: `/` },
+    ],
     Products: [
-      { name: "Our Story", path: `/about/story/${id || 1}` },
-      { name: "Team", path: `/about/team/${id || 1}` },
-      { name: "Mission", path: `/about/mission/${id || 1}` },
-      { name: "Vision", path: `/about/vision/${id || 1}` },
-      { name: "Careers", path: `/about/careers/${id || 1}` },
-      { name: "Testimonials", path: `/about/testimonials/${id || 1}` },
+      { name: "Drug Impurities Reference Standards", path: `/products/drug-impurities-reference-standards` },
+      { name: "Drug Substance Reference Standards", path: `/products/drug-substance-reference-standards` },
+      { name: "Drug Substance Stable Isotope Labeled Reference Standards", path: `/products/drug-substance-stable-isotope-labeled-reference-standards` },
+      { name: "Drug Metabolites Stable Isotope Labeled Reference Standards", path: `/products/drug-metabolites-stable-isotope-labeled-reference-standards` },
+      { name: "Drug Metabolites Reference Standards", path: `/products/drug-metabolites-reference-standards` },
+      { name: "Fine Labeled Research Chemicals", path: `/products/fine-labeled-research-chemicals}` },
+      { name: "Fine Research Chemicals", path: `/products/fine-research-chemicals` },
     ],
-    Services: [
-      { name: "Our Story", path: `/about/story/${id || 1}` },
-      { name: "Team", path: `/about/team/${id || 1}` },
-      { name: "Mission", path: `/about/mission/${id || 1}` },
-      { name: "Vision", path: `/about/vision/${id || 1}` },
-      { name: "Careers", path: `/about/careers/${id || 1}` },
-      { name: "Testimonials", path: `/about/testimonials/${id || 1}` },
+    CustomSynthesis: [
+      { name: "Web Development", path: `/customsynthesis/web-development` },
+      { name: "Mobile App Development", path: `/customsynthesis/mobile-app` },
+
     ],
-    Company: [
-      { name: "Web Development", path: `/services/web-development` },
-      { name: "Mobile App Development", path: `/services/mobile-app/${id || 1}` },
-      { name: "UI/UX Design", path: `/services/ui-ux-design/${id || 1}` },
-      { name: "SEO & Marketing", path: `/services/seo-marketing/${id || 1}` },
-      { name: "E-commerce Solutions", path: `/services/e-commerce/${id || 1}` },
-      { name: "Cloud Hosting", path: `/services/cloud-hosting/${id || 1}` },
+    AboutUs: [
+      { name: "Support", path: `/aboutus/ourteam` },
+      { name: "Sales", path: `/aboutus/updates` },
     ],
-    Support: [
-      { name: "Support", path: `/contact/support/${id || 1}` },
-      { name: "Sales", path: `/contact/sales/${id || 1}` },
-      { name: "Partnerships", path: `/contact/partnerships/${id || 1}` },
-      { name: "Press", path: `/contact/press/${id || 1}` },
-      { name: "Investors", path: `/contact/investors/${id || 1}` },
-      { name: "Feedback", path: `/contact/feedback/${id || 1}` },
+    ContactUs: [
+      { name: "Location", path: `/contactus/location` },
+      { name: "Details", path: `/contactus/details` },
     ],
   };
 
@@ -96,7 +90,7 @@ const Navbar = () => {
               <AnimatePresence>
                 {activeDropdown === menu && (
                   <motion.ul
-                    className="absolute left-0 mt-2 w-56 bg-white text-black shadow-lg"
+                    className="absolute left-0 mt-2 w-[450px] bg-white text-black shadow-xl"
                     onMouseEnter={() => handleMouseEnter(menu)}
                     onMouseLeave={handleMouseLeave}
                     initial={{ opacity: 0, y: -10 }}

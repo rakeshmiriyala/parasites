@@ -66,7 +66,7 @@ const Footer = () => {
       
       {/* Footer Bottom */}
       <div className="text-center text-sm mt-6 pt-4">
-        <p>© 2008-2019 ACANTHUS RESEARCH, INC. ALL RIGHTS RESERVED. </p>
+        <p>© 2025 ACANTHUS RESEARCH, INC. ALL RIGHTS RESERVED. </p>
         <p className="mt-1">TERMS AND CONDITIONS | PRIVACY POLICY | SITE MAP</p>
       </div>
     </footer>

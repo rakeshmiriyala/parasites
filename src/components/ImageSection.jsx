@@ -2,37 +2,52 @@ import React from "react";
 import image1 from "../assets/Image_section_1.jpg";
 import image2 from "../assets/Image_section_2.jpg";
 import image3 from "../assets/Image_section_3.jpg";
-import image4 from "../assets/Image_section_4.jpg";
 
 const NewsPage = () => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto my-10 p-4">
       <div className="flex flex-col md:flex-row gap-4">
-        {/* Left Section */}
-        <div className="md:w-7/10 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
-          <img
-            src={image1}
-            alt="News 1"
-            className="w-full h-auto"
-          />
-          <img
-            src={image2}
-            alt="News 2"
-            className="w-full h-auto"
-          />
-          <img
-            src={image3}
-            alt="News 3"
-            className="w-full h-auto"
-          />
-          <img
-            src={image4}
-            alt="News 4"
-            className="w-full h-auto"
-          />
-        </div>
         
-        {/* Right Section */}
+        {/* Left Section */}
+        <div className="md:w-7/10 w-full">
+          
+          {/* Latest Products */}
+          <h2 className="text-2xl text-center font-bold mb-4">Latest Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[ 
+              { id: 1, image: image1, title: "Product 1", desc: "High-quality research chemical for laboratory use." },
+              { id: 2, image: image2, title: "Product 2", desc: "Advanced drug compound with high purity levels." },
+              { id: 3, image: image3, title: "Product 3", desc: "Stable isotope labeled reference standard." }
+            ].map((product) => (
+              <div key={product.id} className="bg-white p-4">
+                <img src={product.image} alt={product.title} className="w-full h-auto object-cover" />
+                <h3 className="font-semibold mt-2">{product.title}</h3>
+                <p className="text-sm text-gray-600">{product.desc}</p>
+                <button className="mt-3 bg-blue-500 text-white px-4 py-2 hover:bg-blue-600 w-full">
+                  Request Quote
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Upcoming Products */}
+          <h2 className="text-2xl font-bold text-center mt-8 mb-4">Upcoming Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { id: 4, image: image2, title: "Upcoming Product 1", desc: "New formulation launching soon." },
+              { id: 5, image: image3, title: "Upcoming Product 2", desc: "Next-generation drug metabolite." },
+              { id: 6, image: image1, title: "Upcoming Product 3", desc: "Highly stable research chemical." }
+            ].map((product) => (
+              <div key={product.id} className="bg-white p-4">
+                <img src={product.image} alt={product.title} className="w-full h-auto object-cover" />
+                <h3 className="font-semibold mt-2">{product.title}</h3>
+                <p className="text-sm text-gray-600">{product.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Section - Latest News (Unchanged) */}
         <div className="md:w-3/10 w-full h-auto bg-gray-100 p-4 overflow-y-auto">
           <h2 className="text-xl font-bold mb-2">Latest News</h2>
           <div className="space-y-4">
@@ -62,10 +77,8 @@ const NewsPage = () => {
               <a href="#" className="text-blue-500">READ MORE</a>
             </div>
           </div>
-          <div className="mt-4 text-center">
-            <a href="#" className="text-blue-500 font-semibold">READ MORE FROM OUR BLOG &gt;&gt;</a>
-          </div>
         </div>
+
       </div>
     </div>
   );

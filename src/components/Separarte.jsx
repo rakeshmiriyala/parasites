@@ -1,15 +1,23 @@
 import { useParams } from "react-router-dom";
 import sampleData from "./Data.js";
+import Navbar from "./Navbar.jsx";
 
 const DetailsPage = () => {
-  const { name } = useParams();
-  const item = sampleData.find((data) => data.name === name);
+  const { category, name } = useParams();
+  
+  // Find the product that matches both category and name
+  const item = sampleData.find((data) => 
+    data.category.toLowerCase().replace(/\s+/g, "-") === category &&
+    data.name === name
+  );
 
   if (!item) {
     return <h1 className="text-center text-red-500 mt-10 text-2xl">Item Not Found</h1>;
   }
 
   return (
+    <>
+    <Navbar/>
     <div className="flex flex-col items-center min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-bold mb-6">Product Details</h1>
 
@@ -22,18 +30,16 @@ const DetailsPage = () => {
         </div>
 
         {/* Second Column: Product Information */}
-        <div className="bg-white p-6 ">
+        <div className="bg-white p-6">
           <h2 className="text-xl font-bold mb-4">Product Information</h2>
-          <p><strong>Product Number:</strong> CT-01110-1107</p>
-          <p><strong>Catalog Number:</strong> CT-01110-1107</p>
-          <p><strong>Molecular Formula:</strong> C32H55N9O9S</p>
-          <p><strong>CAS Number:</strong> N/A</p>
-          <p><strong>Parent Drug:</strong> Oxytocin</p>
-          <p><strong>Category:</strong> Drug Impurities Reference Standards</p>
+          <p><strong>Product Number:</strong> {item.productNumber}</p>
+          <p><strong>CAS Number:</strong> {item.casNumber}</p>
+          <p><strong>Parent Drug:</strong> {item.parentDrug}</p>
+          <p><strong>Category:</strong> {item.category}</p>
         </div>
 
         {/* Third Column: Pricing & Availability */}
-        <div className="bg-white p-6 ">
+        <div className="bg-white p-6">
           <h2 className="text-xl font-bold mb-4">Pricing & Availability</h2>
           <p className="text-lg text-orange-500 font-semibold">UNIT PRICE: Contact us for pricing.</p>
           <p className="mt-2 text-gray-700">Pending QC</p>
@@ -51,6 +57,7 @@ const DetailsPage = () => {
 
       </div>
     </div>
+    </>
   );
 };
 
