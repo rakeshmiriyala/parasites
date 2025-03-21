@@ -3,17 +3,18 @@ import sampleData from "./Data.js";
 import Navbar from "./Navbar.jsx";
 import bgImage from "../assets/Logo.png";
 
-const DetailsPage = () => {
-  const { category, name } = useParams();
+const ProductDetailsPage = () => {
+  const { productName, productId } = useParams();
 
   // Decode URL parameters to handle spaces & special characters correctly
-  const decodedCategory = decodeURIComponent(category).toLowerCase().replace(/\s+/g, "-");
-  const decodedName = decodeURIComponent(name).toLowerCase().replace(/\s+/g, "-");
+  const decodedProductName = decodeURIComponent(productName).toLowerCase().replace(/\s+/g, "-");
+  const decodedProductId = decodeURIComponent(productId);
 
   // Find the matching product in sampleData
-  const item = sampleData.find((data) => 
-    data.category.toLowerCase().replace(/\s+/g, "-") === decodedCategory &&
-    data.name.toLowerCase().replace(/\s+/g, "-") === decodedName
+  const item = sampleData.find(
+    (data) =>
+      data.name.toLowerCase().replace(/\s+/g, "-") === decodedProductName &&
+      data.productNumber === decodedProductId
   );
 
   if (!item) {
@@ -70,4 +71,4 @@ const DetailsPage = () => {
   );
 };
 
-export default DetailsPage;
+export default ProductDetailsPage;

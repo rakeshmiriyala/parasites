@@ -32,10 +32,7 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Company</h3>
           <ul className="space-y-1 text-sm">
-            <li>About Us</li>
             <li>Careers</li>
-            <li>Distributors</li>
-            <li>ARI Blog</li>
           </ul>
         </div>
 
@@ -66,8 +63,7 @@ const Footer = () => {
       
       {/* Footer Bottom */}
       <div className="text-center text-sm mt-6 pt-4">
-        <p>© 2025 ACANTHUS RESEARCH, INC. ALL RIGHTS RESERVED. </p>
-        <p className="mt-1">TERMS AND CONDITIONS | PRIVACY POLICY | SITE MAP</p>
+        <p>© 2025 EXELUSLABS , INC. ALL RIGHTS RESERVED. </p>
       </div>
     </footer>
   );

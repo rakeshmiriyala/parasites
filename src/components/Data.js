@@ -8,6 +8,8 @@ const sampleData = [
       parentDrug: "Milnacipran",
       casNumber: "175131-61-0",
       category: "Drug Substance Reference Standards",
+      formula:"CH2OH",
+      weight:"250g",
     },
     {
       id: 2,

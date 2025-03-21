@@ -3,14 +3,12 @@ import image1 from "../assets/contact_1.jpg";
 import image2 from "../assets/contact_2.jpg";
 import image3 from "../assets/contact_3.png";
 import image4 from "../assets/contact_1.jpg";
-import image5 from "../assets/contact_2.jpg";
 
 const teamMembers = [
   { name: "Alice Johnson", designation: "Project Manager", img: image1 },
   { name: "Bob Smith", designation: "Lead Developer", img: image2 },
   { name: "Charlie Brown", designation: "UI/UX Designer", img: image3 },
   { name: "David Wilson", designation: "Marketing Head", img: image4 },
-  { name: "David Wilson", designation: "Marketing Head", img: image5 },
 ];
 
 const OurExperts = () => {
@@ -18,9 +16,14 @@ const OurExperts = () => {
     <div className="flex flex-col items-center p-6 h-auto">
       <h1 className="text-3xl font-bold text-center mb-2">Our Experts</h1>
       <p className="text-lg text-gray-600 text-center mb-6">Let's Meet Our Team</p>
-      <div className="flex flex-wrap justify-center gap-6">
+      
+      {/* Container for Cards */}
+      <div className="flex justify-center items-center gap-12 flex-wrap w-full">
         {teamMembers.map((member, index) => (
-          <div key={index} className="bg-gray-100 p-6 w-64 h-80 text-center flex flex-col items-center justify-center">
+          <div 
+            key={index} 
+            className="bg-gray-100 p-6 w-64 h-80 text-center flex flex-col items-center justify-center rounded-lg shadow-md"
+          >
             <img
               src={member.img}
               alt={member.name}

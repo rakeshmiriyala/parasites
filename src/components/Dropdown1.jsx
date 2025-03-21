@@ -13,14 +13,16 @@ const MainPage = () => {
   useEffect(() => {
     setActiveSection(location.pathname);
 
-    // Filter products based on category
     if (category) {
-      const filteredProducts = sampleData.filter((item) =>
-        item.category.toLowerCase().replace(/\s+/g, "-") === category.toLowerCase()
+      const decodedCategory = decodeURIComponent(category).toLowerCase().replace(/\s+/g, "-");
+
+      const filteredProducts = sampleData.filter(
+        (item) => item.category.toLowerCase().replace(/\s+/g, "-") === decodedCategory
       );
+
       setFilteredData(filteredProducts);
     } else {
-      setFilteredData(sampleData); // Show all if no category is selected
+      setFilteredData(sampleData); // Show all products if no category is selected
     }
   }, [category, location.pathname]);
 
@@ -39,7 +41,7 @@ const MainPage = () => {
       <Navbar />
       <div className="flex min-h-screen">
         
-        {/* Left Section (Sidebar - 30%) */}
+        {/* Left Sidebar (30%) */}
         <div className="w-[30%] p-6 bg-white text-black">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <ul>
@@ -58,7 +60,7 @@ const MainPage = () => {
           </ul>
         </div>
 
-        {/* Right Section (Main Content - 70%) */}
+        {/* Right Main Content (70%) */}
         <div className="w-[70%] p-6">
           <h1 className="text-2xl font-bold mb-4">Chemical Compounds</h1>
           <img
@@ -67,42 +69,42 @@ const MainPage = () => {
             className="w-full h-40 object-cover mb-4"
           />
 
-          {/* Cards Section */}
+          {/* Product Listing */}
           <div className="space-y-6">
-            {filteredData.length > 0 ? (
-              filteredData.map((item, index) => (
-                <div key={item.id}>
-                  <div className="text-black p-4 rounded-md flex items-center">
-                    <Link to={`/products/${category}/${item.name}`} className="mr-4">
-                      <img src={item.image} alt={item.name} className="w-24 h-24 rounded-md" />
-                    </Link>
-                    <div>
-                      <Link to={`/products/${category}/${item.name}`}>
-                        <h2 className="font-bold hover:underline cursor-pointer">{item.name}</h2>
-                      </Link>
-                      <p>Product Number: {item.productNumber}</p>
-                      <p>Parent Drug: {item.parentDrug}</p>
-                      <p>CAS Number: {item.casNumber}</p>
-                      <p>Category: {item.category}</p>
-                    </div>
-                    <div className="ml-auto text-right">
-                      <p className="text-orange-500 font-semibold">Pending QC</p>
-                      <Link to={`/products/${category}/${item.name}`} className="text-blue-500 underline">
-                        See more size options
-                      </Link>
-                    </div>
-                  </div>
+          {filteredData.length > 0 ? (
+  filteredData.map((item, index) => {
+    const productPath = category
+      ? `/products/${encodeURIComponent(category.toLowerCase().replace(/\s+/g, "-"))}/${encodeURIComponent(
+          item.name.toLowerCase().replace(/\s+/g, "-")
+        )}`
+      : `/products/${encodeURIComponent(item.name.toLowerCase().replace(/\s+/g, "-"))}`;
 
-                  {/* Horizontal Line After Each Product */}
-                  {index !== filteredData.length - 1 && <hr className="my-4 border-gray-300" />}
-                </div>
-              ))
-            ) : (
-              <p className="text-red-500">No products found for this category.</p>
-            )}
+    return (
+      <div key={item.id}>
+        <div className="text-black p-4 rounded-md flex items-center">
+          <Link to={productPath} className="mr-4">
+            <img src={item.image} alt={item.name} className="w-24 h-24 rounded-md" />
+          </Link>
+          <div>
+            <Link to={productPath}>
+              <h2 className="font-bold hover:underline cursor-pointer">{item.name}</h2>
+            </Link>
+            <p>Product Number: {item.productNumber}</p>
+            <p>Parent Drug: {item.parentDrug}</p>
+            <p>CAS Number: {item.casNumber}</p>
+            <p>Category: {item.category}</p>
           </div>
         </div>
+        {index !== filteredData.length - 1 && <hr className="my-4 border-gray-300" />}
+      </div>
+    );
+  })
+) : (
+  <p className="text-red-500">No products found for this category.</p>
+)}
 
+          </div>
+        </div>
       </div>
     </>
   );
