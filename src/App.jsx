@@ -1,10 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import MainPage from "./components/Dropdown1"; // Displays product categories
-import DetailsPage from "./components/Separarte"; // Displays product details
+import MainPage from "./components/EachProduct"; // Displays product categories
+import DetailsPage from "./components/EachCompound"; // Displays product details
 import ProductsPage from "./components/Products";
-import ProductDetails from "./components/ProductDetails";
+import QuoteRequestPage from "./components/RequestQuote";
 
 function App() {
   return (
@@ -14,7 +14,9 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:category" element={<MainPage />} />
         <Route path="/products/:category/:name" element={<DetailsPage />} />
-        <Route path="/:productName/:productId" element={<ProductDetails />} />
+        <Route path="/products/:productName/:productId" element={<DetailsPage />} />
+        <Route path="/quote-request/:catalogNumber" element={<QuoteRequestPage />} />
+
       </Routes>
     </Router>
   );

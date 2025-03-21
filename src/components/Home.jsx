@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import HeroSection from './Hero'
-import NewsPage from './ImageSection'
+import NewsPage from './LatestUpdates'
 import Footer from './Footer'
 import OurExperts from './Experts'
 

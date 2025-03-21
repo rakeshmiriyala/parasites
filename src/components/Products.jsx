@@ -15,22 +15,26 @@ const ProductsPage = () => {
     setAllProducts(sampleData); // Load all products
   }, []);
 
-  const decodedCategory = category && category !== "null" 
-  ? decodeURIComponent(category).toLowerCase().replace(/\s+/g, "-") 
-  : null;
+  const decodedCategory =
+    category && category !== "null"
+      ? decodeURIComponent(category).toLowerCase().replace(/\s+/g, "-")
+      : null;
 
-const filteredProducts = decodedCategory
-  ? allProducts.filter(
-      (item) => item.category.toLowerCase().replace(/\s+/g, "-") === decodedCategory
-    )
-  : allProducts;
-
+  const filteredProducts = decodedCategory
+    ? allProducts.filter(
+        (item) =>
+          item.category.toLowerCase().replace(/\s+/g, "-") === decodedCategory
+      )
+    : allProducts;
 
   // Pagination logic
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const indexOfLastProduct = currentPage * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
-  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   // Handle Pagination
   const nextPage = () => {
@@ -49,7 +53,8 @@ const filteredProducts = decodedCategory
     } else {
       pages.push(1, 2);
       if (currentPage > 4) pages.push("...");
-      if (currentPage > 3 && currentPage < totalPages - 2) pages.push(currentPage);
+      if (currentPage > 3 && currentPage < totalPages - 2)
+        pages.push(currentPage);
       if (currentPage < totalPages - 3) pages.push("...");
       pages.push(totalPages - 1, totalPages);
     }
@@ -60,7 +65,6 @@ const filteredProducts = decodedCategory
     <>
       <Navbar />
       <div className="flex min-h-screen">
-        
         {/* Left Sidebar (30%) */}
         <div className="w-[30%] p-6 bg-white text-black">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
@@ -76,7 +80,9 @@ const filteredProducts = decodedCategory
             ].map((category, index) => (
               <li key={index}>
                 <Link
-                  to={`/products/${encodeURIComponent(category.toLowerCase().replace(/\s+/g, "-"))}`}
+                  to={`/products/${encodeURIComponent(
+                    category.toLowerCase().replace(/\s+/g, "-")
+                  )}`}
                   className="block p-2 hover:bg-blue-500 hover:text-white"
                 >
                   {category}
@@ -89,23 +95,35 @@ const filteredProducts = decodedCategory
         {/* Right Section - Display Paginated Products (70%) */}
         <div className="w-[70%] p-6">
           <h1 className="text-2xl font-bold mb-4">Products</h1>
-          <img src={bgImage} alt="Chemical Banner" className="w-full h-40 object-cover mb-4 rounded-md" />
+          <img
+            src={bgImage}
+            alt="Chemical Banner"
+            className="w-full h-40 object-cover mb-4 rounded-md"
+          />
 
           {/* Display Paginated Products */}
           <div className="space-y-6">
             {currentProducts.length > 0 ? (
               currentProducts.map((item, index) => {
-                const productPath = `/${encodeURIComponent(item.name.toLowerCase().replace(/\s+/g, "-"))}/${encodeURIComponent(item.productNumber)}`;
+                const productPath = `/products/${encodeURIComponent(
+                  item.category.toLowerCase().replace(/\s+/g, "-")
+                )}/${encodeURIComponent(item.name.toLowerCase().replace(/\s+/g, "-"))}`;
 
                 return (
                   <div key={item.id} className="p-4 bg-white">
                     <div className="text-black flex items-center">
                       <Link to={productPath} className="mr-4">
-                        <img src={item.image} alt={item.name} className="w-24 h-24 rounded-md" />
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-24 h-24 rounded-md"
+                        />
                       </Link>
                       <div>
                         <Link to={productPath}>
-                          <h2 className="font-bold hover:underline cursor-pointer">{item.name}</h2>
+                          <h2 className="font-bold hover:underline cursor-pointer">
+                            {item.name}
+                          </h2>
                         </Link>
                         <p>Product Number: {item.productNumber}</p>
                         <p>Parent Drug: {item.parentDrug}</p>
@@ -113,12 +131,16 @@ const filteredProducts = decodedCategory
                         <p>Category: {item.category}</p>
                       </div>
                       <div className="ml-auto text-right">
-                        <p className="text-orange-500 font-semibold">Pending QC</p>
+                        <p className="text-orange-500 font-semibold">
+                          Pending QC
+                        </p>
                       </div>
                     </div>
 
                     {/* Horizontal Line After Each Product */}
-                    {index !== currentProducts.length - 1 && <hr className="my-4 border-gray-300" />}
+                    {index !== currentProducts.length - 1 && (
+                      <hr className="my-4 border-gray-300" />
+                    )}
                   </div>
                 );
               })
