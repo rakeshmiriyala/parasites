@@ -1,20 +1,20 @@
-import React from 'react'
-import Navbar from './Navbar'
-import HeroSection from './Hero'
-import NewsPage from './LatestUpdates'
-import Footer from './Footer'
-import OurExperts from './Experts'
+import React from "react";
+import Navbar from "./Navbar";
+import HeroSection from "./Hero";
+import NewsPage from "./LatestUpdates";
+import Footer from "./Footer";
+import OurExperts from "./Experts";
 
 const Home = () => {
   return (
     <>
-      <Navbar/>
-      <HeroSection/>
-      <NewsPage/>
-      <OurExperts/>
-      <Footer/>
+      <Navbar />
+      <HeroSection />
+      <NewsPage />
+      <OurExperts />
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

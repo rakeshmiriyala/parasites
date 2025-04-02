@@ -1,5 +1,11 @@
 import React from "react";
-import { FaPhoneAlt, FaEnvelope, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaInstagram,
+  FaLinkedin,
+  FaFacebook,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -48,19 +54,23 @@ const Footer = () => {
 
         {/* Connect */}
         <div>
-        <h3 className="font-semibold text-lg mb-2">Connect</h3>
+          <h3 className="font-semibold text-lg mb-2">Connect</h3>
           <div className="flex gap-4 ">
             <FaInstagram className="text-xl cursor-pointer" />
             <FaLinkedin className="text-xl cursor-pointer" />
             <FaFacebook className="text-xl cursor-pointer" />
           </div>
           <ul className="space-y-1 text-sm mt-4">
-            <li className="flex items-center gap-2"><FaPhoneAlt /> 1-647-478-1021</li>
-            <li className="flex items-center gap-2"><FaEnvelope /> Email Us</li>
+            <li className="flex items-center gap-2">
+              <FaPhoneAlt /> 1-647-478-1021
+            </li>
+            <li className="flex items-center gap-2">
+              <FaEnvelope /> Email Us
+            </li>
           </ul>
         </div>
       </div>
-      
+
       {/* Footer Bottom */}
       <div className="text-center text-sm mt-6 pt-4">
         <p>© 2025 EXELUSLABS , INC. ALL RIGHTS RESERVED. </p>

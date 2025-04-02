@@ -15,13 +15,15 @@ const OurExperts = () => {
   return (
     <div className="flex flex-col items-center p-6 h-auto">
       <h1 className="text-3xl font-bold text-center mb-2">Our Experts</h1>
-      <p className="text-lg text-gray-600 text-center mb-6">Let's Meet Our Team</p>
-      
+      <p className="text-lg text-gray-600 text-center mb-6">
+        Let's Meet Our Team
+      </p>
+
       {/* Container for Cards */}
       <div className="flex justify-center items-center gap-12 flex-wrap w-full">
         {teamMembers.map((member, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className="bg-gray-100 p-6 w-64 h-80 text-center flex flex-col items-center justify-center rounded-lg shadow-md"
           >
             <img

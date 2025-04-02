@@ -1,7 +1,11 @@
 import React from "react";
-import image1 from "../assets/Image_section_1.jpg";
-import image2 from "../assets/Image_section_2.jpg";
-import image3 from "../assets/Image_section_3.jpg";
+import image1 from "../assets/Products/EXL-004.png";
+import image2 from "../assets/Products/EXL-002.png";
+import image3 from "../assets/Products/EXL-003.png";
+import image4 from "../assets/Products/EXL-011.png";
+import image5 from "../assets/Products/EXL-005.png";
+import image6 from "../assets/Products/EXL-006.png";
+import image7 from "../assets/Products/EXL-012.png";
 
 const NewsPage = () => {
   return (
@@ -14,25 +18,25 @@ const NewsPage = () => {
             {
               id: 1,
               image: image1,
-              title: "Product 1",
+              title: "N-Nitroso Vortioxetine",
               desc: "High-quality research chemical for laboratory use.",
             },
             {
               id: 2,
               image: image2,
-              title: "Product 2",
+              title: "Clarithromycin-13CD3",
               desc: "Advanced drug compound with high purity levels.",
             },
             {
               id: 3,
               image: image3,
-              title: "Product 3",
+              title: "N-Nitroso-varenicline",
               desc: "Stable isotope labeled reference standard.",
             },
             {
               id: 4,
-              image: image1,
-              title: "Product 4",
+              image: image4,
+              title: "N-Nitroso Metoprolol",
               desc: "Innovative formulation with enhanced stability.",
             },
           ].map((product) => (
@@ -43,14 +47,13 @@ const NewsPage = () => {
                 className="w-full h-auto object-cover"
               />
               <h3 className="font-semibold mt-2">{product.title}</h3>
-              <p className="text-sm text-gray-600">{product.desc}</p>
+              {/* <p className="text-sm text-gray-600">{product.desc}</p> */}
               <button className="mt-3 bg-blue-500 text-white px-4 py-2 hover:bg-blue-600 w-full">
                 Request Quote
               </button>
             </div>
           ))}
         </div>
-
         {/* Second Row - Latest News (Scrollable) */}
         <h2 className="text-2xl font-bold text-center mt-8 mb-4">
           Latest News
@@ -60,20 +63,20 @@ const NewsPage = () => {
           {[
             {
               id: 5,
-              image: image2,
-              title: "Upcoming Product 1",
+              image: image5,
+              title: "N-Nitroso Rizatriptan",
               desc: "New formulation launching soon.",
             },
             {
               id: 6,
-              image: image3,
-              title: "Upcoming Product 2",
+              image: image6,
+              title: "N-Nitroso Enalapril",
               desc: "Next-generation drug metabolite.",
             },
             {
               id: 7,
-              image: image1,
-              title: "Upcoming Product 3",
+              image: image7,
+              title: "N-Nitrosodimethylamine – 13C2D6",
               desc: "Highly stable research chemical.",
             },
           ].map((product) => (
@@ -84,7 +87,7 @@ const NewsPage = () => {
                 className="w-full h-auto object-cover"
               />
               <h3 className="font-semibold mt-2">{product.title}</h3>
-              <p className="text-sm text-gray-600">{product.desc}</p>
+              {/* <p className="text-sm text-gray-600">{product.desc}</p> */}
             </div>
           ))}
           {/* News Section with Scroll */}

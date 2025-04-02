@@ -2,8 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi"; // Icons
 import { motion, AnimatePresence } from "framer-motion"; // Smooth animation
-import sampleData from './Data'; // Import sampleData
-import Logo from "../assets/Logo.png"
+import sampleData from "./Data"; // Import sampleData
+import Logo from "../assets/Logo.png";
 
 const Navbar = () => {
   const { id } = useParams(); // Getting dynamic ID from URL
@@ -29,8 +29,10 @@ const Navbar = () => {
     setSearchQuery(query);
 
     if (query.length > 0) {
-      const filteredResults = sampleData.filter((item) =>
-        item.name.toLowerCase().includes(query) || item.casNumber.toLowerCase().includes(query)
+      const filteredResults = sampleData.filter(
+        (item) =>
+          item.name.toLowerCase().includes(query) ||
+          item.casNumber.toLowerCase().includes(query)
       );
       setSearchResults(filteredResults);
     } else {
@@ -41,13 +43,34 @@ const Navbar = () => {
   const menuLinks = {
     Home: "/",
     Products: [
-      { name: "Drug Impurities Reference Standards", path: "/products/drug-impurities-reference-standards" },
-      { name: "Drug Substance Reference Standards", path: "/products/drug-substance-reference-standards" },
-      { name: "Drug Substance Stable Isotope Labeled Reference Standards", path: "/products/drug-substance-stable-isotope-labeled-reference-standards" },
-      { name: "Drug Metabolites Stable Isotope Labeled Reference Standards", path: "/products/drug-metabolites-stable-isotope-labeled-reference-standards" },
-      { name: "Drug Metabolites Reference Standards", path: "/products/drug-metabolites-reference-standards" },
-      { name: "Fine Labeled Research Chemicals", path: "/products/fine-labeled-research-chemicals" },
-      { name: "Fine Research Chemicals", path: "/products/fine-research-chemicals" },
+      {
+        name: "Drug Impurities Reference Standards",
+        path: "/products/drug-impurities-reference-standards",
+      },
+      {
+        name: "Drug Substance Reference Standards",
+        path: "/products/drug-substance-reference-standards",
+      },
+      {
+        name: "Drug Substance Stable Isotope Labeled Reference Standards",
+        path: "/products/drug-substance-stable-isotope-labeled-reference-standards",
+      },
+      {
+        name: "Drug Metabolites Stable Isotope Labeled Reference Standards",
+        path: "/products/drug-metabolites-stable-isotope-labeled-reference-standards",
+      },
+      {
+        name: "Drug Metabolites Reference Standards",
+        path: "/products/drug-metabolites-reference-standards",
+      },
+      {
+        name: "Fine Labeled Research Chemicals",
+        path: "/products/fine-labeled-research-chemicals",
+      },
+      {
+        name: "Fine Research Chemicals",
+        path: "/products/fine-research-chemicals",
+      },
     ],
     CustomSynthesis: "/customsynthesis",
     AboutUs: "/aboutus",
@@ -72,10 +95,12 @@ const Navbar = () => {
               {menu === "Products" ? (
                 <>
                   {/* Clickable "Products" that redirects */}
-                  <Link to="/products" className="hover:text-gray-400 text-xl cursor-pointer">
+                  <Link
+                    to="/products"
+                    className="hover:text-gray-400 text-xl cursor-pointer"
+                  >
                     Products
                   </Link>
-
                   {/* Dropdown on hover */}
                   <AnimatePresence>
                     {activeDropdown === menu && (
@@ -90,7 +115,10 @@ const Navbar = () => {
                       >
                         {menuLinks[menu].map((item) => (
                           <li key={item.path}>
-                            <Link to={item.path} className="block px-4 py-2 hover:bg-gray-300">
+                            <Link
+                              to={item.path}
+                              className="block px-4 py-2 hover:bg-gray-300"
+                            >
                               {item.name}
                             </Link>
                           </li>
@@ -100,14 +128,16 @@ const Navbar = () => {
                   </AnimatePresence>
                 </>
               ) : (
-                <Link to={menuLinks[menu]} className="hover:text-gray-400 text-xl">
+                <Link
+                  to={menuLinks[menu]}
+                  className="hover:text-gray-400 text-xl"
+                >
                   {menu}
                 </Link>
               )}
             </li>
           ))}
         </ul>
-
         {/* Search Input */}
         <div className="relative md:flex hidden">
           <input
@@ -120,7 +150,10 @@ const Navbar = () => {
           {searchResults.length > 0 && (
             <ul className="absolute top-12 right-0 w-64 bg-gray-800 text-white rounded shadow-lg">
               {searchResults.map((result) => (
-                <li key={result.id} className="border-b border-gray-700 last:border-none">
+                <li
+                  key={result.id}
+                  className="border-b border-gray-700 last:border-none"
+                >
                   <Link
                     to={`${result.link1}/${result.name}`}
                     className="block px-4 py-2 hover:bg-gray-700"

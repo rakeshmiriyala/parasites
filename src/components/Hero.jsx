@@ -1,20 +1,26 @@
-import bgImage from "../assets/Hero_bg.jpg";
+import heroVideo from "../assets/bg_video.mp4";
 
 const HeroSection = () => {
   return (
-    <div 
-      className=" w-full h-screen bg-cover bg-center flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32"
-      style={{ backgroundImage: `url(${bgImage})` ,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        backgroundBlendMode: "overlay"
+    <div className="relative w-full h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover"
+        playbackRate={0.8} // Slow down the video
+        onLoadedMetadata={(e) => (e.target.playbackRate = 0.5)} // Ensure playback rate is set
+      >
+        <source src={heroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      }}
-    >
       {/* Overlay */}
-      <div className="inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Content */}
-      <div className="text-center text-white p-6 rounded-lg max-w-2xl">
+      <div className="relative text-center text-white p-6 rounded-lg max-w-2xl">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
           Our art is at the heart of 1,000+ reference standards
         </h1>

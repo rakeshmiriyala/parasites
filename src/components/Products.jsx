@@ -91,7 +91,6 @@ const ProductsPage = () => {
             ))}
           </ul>
         </div>
-
         {/* Right Section - Display Paginated Products (70%) */}
         <div className="w-[70%] p-6">
           <h1 className="text-2xl font-bold mb-4">Products</h1>
@@ -100,15 +99,15 @@ const ProductsPage = () => {
             alt="Chemical Banner"
             className="w-full h-40 object-cover mb-4 rounded-md"
           />
-
           {/* Display Paginated Products */}
           <div className="space-y-6">
             {currentProducts.length > 0 ? (
               currentProducts.map((item, index) => {
                 const productPath = `/products/${encodeURIComponent(
                   item.category.toLowerCase().replace(/\s+/g, "-")
-                )}/${encodeURIComponent(item.name.toLowerCase().replace(/\s+/g, "-"))}`;
-
+                )}/${encodeURIComponent(
+                  item.name.toLowerCase().replace(/\s+/g, "-")
+                )}`;
                 return (
                   <div key={item.id} className="p-4 bg-white">
                     <div className="text-black flex items-center">
@@ -130,13 +129,7 @@ const ProductsPage = () => {
                         <p>CAS Number: {item.casNumber}</p>
                         <p>Category: {item.category}</p>
                       </div>
-                      <div className="ml-auto text-right">
-                        <p className="text-orange-500 font-semibold">
-                          Pending QC
-                        </p>
-                      </div>
                     </div>
-
                     {/* Horizontal Line After Each Product */}
                     {index !== currentProducts.length - 1 && (
                       <hr className="my-4 border-gray-300" />
@@ -148,7 +141,6 @@ const ProductsPage = () => {
               <p className="text-red-500">No products available.</p>
             )}
           </div>
-
           {/* Pagination Controls */}
           <div className="flex justify-center mt-6 items-center">
             {/* Left Arrow Button */}
@@ -163,13 +155,14 @@ const ProductsPage = () => {
             >
               <FaArrowLeftLong size={25} />
             </button>
-
             {/* Page Number Buttons in Boxes */}
             <div className="flex gap-2">
               {generatePageNumbers().map((page, index) => (
                 <button
                   key={index}
-                  onClick={() => typeof page === "number" && setCurrentPage(page)}
+                  onClick={() =>
+                    typeof page === "number" && setCurrentPage(page)
+                  }
                   className={`px-4 py-2 rounded-md border ${
                     page === currentPage
                       ? "bg-blue-500 text-white"
@@ -181,7 +174,6 @@ const ProductsPage = () => {
                 </button>
               ))}
             </div>
-
             {/* Right Arrow Button */}
             <button
               onClick={nextPage}

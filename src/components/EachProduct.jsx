@@ -14,10 +14,13 @@ const MainPage = () => {
     setActiveSection(location.pathname);
 
     if (category) {
-      const decodedCategory = decodeURIComponent(category).toLowerCase().replace(/\s+/g, "-");
+      const decodedCategory = decodeURIComponent(category)
+        .toLowerCase()
+        .replace(/\s+/g, "-");
 
       const filteredProducts = sampleData.filter(
-        (item) => item.category.toLowerCase().replace(/\s+/g, "-") === decodedCategory
+        (item) =>
+          item.category.toLowerCase().replace(/\s+/g, "-") === decodedCategory
       );
 
       setFilteredData(filteredProducts);
@@ -27,20 +30,40 @@ const MainPage = () => {
   }, [category, location.pathname]);
 
   const services = [
-    { name: "Drug Impurities Reference Standards", path: `/products/drug-impurities-reference-standards` },
-    { name: "Drug Substance Reference Standards", path: `/products/drug-substance-reference-standards` },
-    { name: "Drug Substance Stable Isotope Labeled Reference Standards", path: `/products/drug-substance-stable-isotope-labeled-reference-standards` },
-    { name: "Drug Metabolites Stable Isotope Labeled Reference Standards", path: `/products/drug-metabolites-stable-isotope-labeled-reference-standards` },
-    { name: "Drug Metabolites Reference Standards", path: `/products/drug-metabolites-reference-standards` },
-    { name: "Fine Labeled Research Chemicals", path: `/products/fine-labeled-research-chemicals` },
-    { name: "Fine Research Chemicals", path: `/products/fine-research-chemicals` },
+    {
+      name: "Drug Impurities Reference Standards",
+      path: `/products/drug-impurities-reference-standards`,
+    },
+    {
+      name: "Drug Substance Reference Standards",
+      path: `/products/drug-substance-reference-standards`,
+    },
+    {
+      name: "Drug Substance Stable Isotope Labeled Reference Standards",
+      path: `/products/drug-substance-stable-isotope-labeled-reference-standards`,
+    },
+    {
+      name: "Drug Metabolites Stable Isotope Labeled Reference Standards",
+      path: `/products/drug-metabolites-stable-isotope-labeled-reference-standards`,
+    },
+    {
+      name: "Drug Metabolites Reference Standards",
+      path: `/products/drug-metabolites-reference-standards`,
+    },
+    {
+      name: "Fine Labeled Research Chemicals",
+      path: `/products/fine-labeled-research-chemicals`,
+    },
+    {
+      name: "Fine Research Chemicals",
+      path: `/products/fine-research-chemicals`,
+    },
   ];
 
   return (
     <>
       <Navbar />
       <div className="flex min-h-screen">
-        
         {/* Left Sidebar (30%) */}
         <div className="w-[30%] p-6 bg-white text-black">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
@@ -50,7 +73,9 @@ const MainPage = () => {
                 <Link
                   to={service.path}
                   className={`block p-2 ${
-                    activeSection.includes(service.path) ? "bg-blue-500 text-white" : "hover:bg-blue-500 hover:text-white"
+                    activeSection.includes(service.path)
+                      ? "bg-blue-500 text-white"
+                      : "hover:bg-blue-500 hover:text-white"
                   }`}
                 >
                   {service.name}
@@ -71,38 +96,51 @@ const MainPage = () => {
 
           {/* Product Listing */}
           <div className="space-y-6">
-          {filteredData.length > 0 ? (
-  filteredData.map((item, index) => {
-    const productPath = category
-      ? `/products/${encodeURIComponent(category.toLowerCase().replace(/\s+/g, "-"))}/${encodeURIComponent(
-          item.name.toLowerCase().replace(/\s+/g, "-")
-        )}`
-      : `/products/${encodeURIComponent(item.name.toLowerCase().replace(/\s+/g, "-"))}`;
+            {filteredData.length > 0 ? (
+              filteredData.map((item, index) => {
+                const productPath = category
+                  ? `/products/${encodeURIComponent(
+                      category.toLowerCase().replace(/\s+/g, "-")
+                    )}/${encodeURIComponent(
+                      item.name.toLowerCase().replace(/\s+/g, "-")
+                    )}`
+                  : `/products/${encodeURIComponent(
+                      item.name.toLowerCase().replace(/\s+/g, "-")
+                    )}`;
 
-    return (
-      <div key={item.id}>
-        <div className="text-black p-4 rounded-md flex items-center">
-          <Link to={productPath} className="mr-4">
-            <img src={item.image} alt={item.name} className="w-24 h-24 rounded-md" />
-          </Link>
-          <div>
-            <Link to={productPath}>
-              <h2 className="font-bold hover:underline cursor-pointer">{item.name}</h2>
-            </Link>
-            <p>Product Number: {item.productNumber}</p>
-            <p>Parent Drug: {item.parentDrug}</p>
-            <p>CAS Number: {item.casNumber}</p>
-            <p>Category: {item.category}</p>
-          </div>
-        </div>
-        {index !== filteredData.length - 1 && <hr className="my-4 border-gray-300" />}
-      </div>
-    );
-  })
-) : (
-  <p className="text-red-500">No products found for this category.</p>
-)}
-
+                return (
+                  <div key={item.id}>
+                    <div className="text-black p-4 rounded-md flex items-center">
+                      <Link to={productPath} className="mr-4">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-24 h-24 rounded-md"
+                        />
+                      </Link>
+                      <div>
+                        <Link to={productPath}>
+                          <h2 className="font-bold hover:underline cursor-pointer">
+                            {item.name}
+                          </h2>
+                        </Link>
+                        <p>Product Number: {item.productNumber}</p>
+                        <p>Parent Drug: {item.parentDrug}</p>
+                        <p>CAS Number: {item.casNumber}</p>
+                        <p>Category: {item.category}</p>
+                      </div>
+                    </div>
+                    {index !== filteredData.length - 1 && (
+                      <hr className="my-4 border-gray-300" />
+                    )}
+                  </div>
+                );
+              })
+            ) : (
+              <p className="text-red-500">
+                No products found for this category.
+              </p>
+            )}
           </div>
         </div>
       </div>

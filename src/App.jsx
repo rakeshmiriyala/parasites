@@ -14,9 +14,14 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:category" element={<MainPage />} />
         <Route path="/products/:category/:name" element={<DetailsPage />} />
-        <Route path="/products/:productName/:productId" element={<DetailsPage />} />
-        <Route path="/quote-request/:catalogNumber" element={<QuoteRequestPage />} />
-
+        <Route
+          path="/products/:productName/:productId"
+          element={<DetailsPage />}
+        />
+        <Route
+          path="/quote-request/:catalogNumber"
+          element={<QuoteRequestPage />}
+        />
       </Routes>
     </Router>
   );
