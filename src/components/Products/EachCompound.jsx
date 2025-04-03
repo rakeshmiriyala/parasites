@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
-import sampleData from "./Data.js";
-import Navbar from "./Navbar.jsx";
-import bgImage from "../assets/Logo.png";
+import sampleData from "../Data.js";
+import Navbar from "../Navbar.jsx";
+import bgImage from "../../assets/Logo.png";
 
 const DetailsPage = () => {
   const { category, name } = useParams();

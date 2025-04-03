@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
+import Navbar from "../Navbar.jsx";
 
 const QuoteRequestPage = () => {
   const { catalogNumber } = useParams();

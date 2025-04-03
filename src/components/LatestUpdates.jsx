@@ -54,6 +54,7 @@ const NewsPage = () => {
             </div>
           ))}
         </div>
+
         {/* Second Row - Latest News (Scrollable) */}
         <h2 className="text-2xl font-bold text-center mt-8 mb-4">
           Latest News

@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
-import sampleData from "./Data.js";
-import bgImage from "../assets/product-1_bg.jpg";
-import Navbar from "./Navbar.jsx";
+import sampleData from "../Data.js";
+import bgImage from "../../assets/product-1_bg.jpg";
+import Navbar from "../Navbar.jsx";
 
 const ProductsPage = () => {
   const { category } = useParams();
