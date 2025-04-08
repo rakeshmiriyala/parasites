@@ -10,7 +10,7 @@ const CustomSynthesis = () => {
       className="h-[250px] bg-cover bg-center flex justify-start items-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <div className="py-6 text-start lg:px-26">
+      <div className="py-6 text-white text-start lg:px-26">
         <h1 className="text-3xl font-bold mb-4 h-1/5 flex items-center justify-start">
           Custom Synthesis
         </h1>

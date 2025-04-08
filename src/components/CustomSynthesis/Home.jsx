@@ -4,6 +4,7 @@ import CustomSynthesisProcess from './EandE'
 import Capabilities from './CandS'
 import Points from './Points'
 import Paragraphs from './3Paragraphs'
+import Footer from '../Footer'
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <Points/>
       <br/>
       <Paragraphs/>
+      <Footer/>
     </>
   )
 }

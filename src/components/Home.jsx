@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import HeroSection from "./Hero";
 import NewsPage from "./LatestUpdates";
 import Footer from "./Footer";
-import OurExperts from "./Experts";
+import ImageCarousel from "./Our_Accreditation";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <NewsPage />
-      <OurExperts />
+      <ImageCarousel/>
       <Footer />
     </>
   );
