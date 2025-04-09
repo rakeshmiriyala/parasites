@@ -15,13 +15,30 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Products</h3>
           <ul className="space-y-1 text-sm">
-            <li>Drug Impurities Reference Standards</li>
-            <li>Drug Substance Reference Standards</li>
-            <li>Drug Substance Stable Isotope Labeled Reference Standards</li>
-            <li>Drug Metabolites Stable Isotope Labeled Reference Standards</li>
-            <li>Drug Metabolites Reference Standards</li>
-            <li>Fine Labeled Research Chemicals</li>
-            <li>Fine Research Chemicals</li>
+            <li>
+              <a
+                href="/products/stable-isotopes"
+                className=""
+              >
+                Stable Isotopes
+              </a>
+            </li>
+            <li>
+              <a
+                href="/products/impurities"
+                className=""
+              >
+                Impurities
+              </a>
+            </li>
+            <li>
+              <a
+                href="/products/nitrosamine"
+                className=""
+              >
+                Nitrosamine
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -30,7 +47,6 @@ const Footer = () => {
           <h3 className="font-semibold text-lg mb-2">Services</h3>
           <ul className="space-y-1 text-sm">
             <li>Custom Synthesis</li>
-            <li>Research Projects</li>
           </ul>
         </div>
 
@@ -48,24 +64,47 @@ const Footer = () => {
           <ul className="space-y-1 text-sm">
             <li>Contact Us</li>
             <li>Request a Quote</li>
-            <li>Request COA/MSDS</li>
           </ul>
         </div>
 
         {/* Connect */}
         <div>
           <h3 className="font-semibold text-lg mb-2">Connect</h3>
-          <div className="flex gap-4 ">
-            <FaInstagram className="text-xl cursor-pointer" />
-            <FaLinkedin className="text-xl cursor-pointer" />
-            <FaFacebook className="text-xl cursor-pointer" />
+          <div className="flex gap-4">
+            <a
+              href="https://www.instagram.com/exelus_labs?igsh=MXEyeWU2bXF0NHdhcg=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="text-xl cursor-pointer hover:text-pink-500 transition" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/exelus-labs-private-limited-1/posts/?feedView=all&viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="text-xl cursor-pointer hover:text-blue-600 transition" />
+            </a>
           </div>
+
           <ul className="space-y-1 text-sm mt-4">
             <li className="flex items-center gap-2">
-              <FaPhoneAlt /> 1-647-478-1021
+              <FaPhoneAlt />
+              <a href="tel:+917989540212" className="hover:underline">
+                +91 79895 40212
+              </a>
             </li>
             <li className="flex items-center gap-2">
-              <FaEnvelope /> Email Us
+              <FaPhoneAlt />
+              <a href="tel:+919709666777" className="hover:underline">
+                +91 97096 66777
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaEnvelope />
+              <a href="info@exeluslabs.com" className="hover:underline">
+                Email Us
+              </a>
             </li>
           </ul>
         </div>

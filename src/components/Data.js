@@ -7,7 +7,7 @@ const sampleData = [
     productNumber: "ACA-160613-0004",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Substance Reference Standards",
+    category: "Stable isotopes",
     formula: "CH2OH",
     weight: "250g",
   },
@@ -19,7 +19,7 @@ const sampleData = [
     productNumber: "ACA-160614-0005",
     parentDrug: "Tartaric Acid",
     casNumber: "87-69-4",
-    category: "Organic Acid Reference Standards",
+    category: "Impurities",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const sampleData = [
     productNumber: "ACA-160613-0006",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Substance Reference Standards",
+    category: "Nitrosamine",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ const sampleData = [
     productNumber: "ACA-160613-0007",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Substance Reference Standards",
+    category: "Stable isotopes",
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ const sampleData = [
     productNumber: "ACA-160613-0008",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Substance Reference Standards",
+    category: "Impurities",
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ const sampleData = [
     productNumber: "ACA-160613-0009",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Impurities Reference Standards",
+    category: "Nitrosamine",
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const sampleData = [
     productNumber: "ACA-160613-0010",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Substance Stable Isotope Labeled Reference Standards",
+    category: "Stable isotopes",
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const sampleData = [
     productNumber: "ACA-160613-00011",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Metabolites Stable Isotope Labeled Reference Standards",
+    category: "Impurities",
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ const sampleData = [
     productNumber: "ACA-160613-00012",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Drug Metabolites Reference Standards",
+    category: "Nitrosamine",
   },
   {
     id: 10,
@@ -99,7 +99,7 @@ const sampleData = [
     productNumber: "ACA-160613-0013",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Fine Labeled Research Chemicals",
+    category: "Stable isotopes",
   },
   {
     id: 11,
@@ -109,7 +109,7 @@ const sampleData = [
     productNumber: "ACA-160613-0014",
     parentDrug: "Milnacipran",
     casNumber: "175131-61-0",
-    category: "Fine Research Chemicals",
+    category: "Impurities",
   },
 ];
 export default sampleData;

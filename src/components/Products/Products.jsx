@@ -70,13 +70,9 @@ const ProductsPage = () => {
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <ul>
             {[
-              "Drug Impurities Reference Standards",
-              "Drug Substance Reference Standards",
-              "Drug Substance Stable Isotope Labeled Reference Standards",
-              "Drug Metabolites Stable Isotope Labeled Reference Standards",
-              "Drug Metabolites Reference Standards",
-              "Fine Labeled Research Chemicals",
-              "Fine Research Chemicals",
+              "Stable isotopes",
+              "Impurities",
+              "Nitrosamine",
             ].map((category, index) => (
               <li key={index}>
                 <Link

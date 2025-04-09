@@ -44,32 +44,16 @@ const Navbar = () => {
     Home: "/",
     Products: [
       {
-        name: "Drug Impurities Reference Standards",
-        path: "/products/drug-impurities-reference-standards",
+        name: "Stable isotopes",
+        path: "/products/stable-isotopes",
       },
       {
-        name: "Drug Substance Reference Standards",
-        path: "/products/drug-substance-reference-standards",
+        name: "Impurities",
+        path: "/products/impurities",
       },
       {
-        name: "Drug Substance Stable Isotope Labeled Reference Standards",
-        path: "/products/drug-substance-stable-isotope-labeled-reference-standards",
-      },
-      {
-        name: "Drug Metabolites Stable Isotope Labeled Reference Standards",
-        path: "/products/drug-metabolites-stable-isotope-labeled-reference-standards",
-      },
-      {
-        name: "Drug Metabolites Reference Standards",
-        path: "/products/drug-metabolites-reference-standards",
-      },
-      {
-        name: "Fine Labeled Research Chemicals",
-        path: "/products/fine-labeled-research-chemicals",
-      },
-      {
-        name: "Fine Research Chemicals",
-        path: "/products/fine-research-chemicals",
+        name: "Nitrosamine",
+        path: "/products/nitrosamine",
       },
     ],
     CustomSynthesis: "/customsynthesis",
