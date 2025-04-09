@@ -90,20 +90,20 @@ const Footer = () => {
           <ul className="space-y-1 text-sm mt-4">
             <li className="flex items-center gap-2">
               <FaPhoneAlt />
-              <a href="tel:+917989540212" className="hover:underline">
+              <a href="tel:+917989540212" className="">
                 +91 79895 40212
               </a>
             </li>
             <li className="flex items-center gap-2">
               <FaPhoneAlt />
-              <a href="tel:+919709666777" className="hover:underline">
+              <a href="tel:+919709666777" className="">
                 +91 97096 66777
               </a>
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope />
-              <a href="info@exeluslabs.com" className="hover:underline">
-                Email Us
+              <a href="info@exeluslabs.com" className="">
+              info@exeluslabs.com
               </a>
             </li>
           </ul>
