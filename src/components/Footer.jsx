@@ -46,7 +46,14 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Services</h3>
           <ul className="space-y-1 text-sm">
-            <li>Custom Synthesis</li>
+          <li>
+              <a
+                href="/customsynthesis"
+                className=""
+              >
+                Custom Synthesis
+              </a>
+            </li>
           </ul>
         </div>
 
