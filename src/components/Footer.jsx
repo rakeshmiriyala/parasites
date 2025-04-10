@@ -1,10 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaPhoneAlt,
   FaEnvelope,
   FaInstagram,
   FaLinkedin,
-  FaFacebook,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -16,28 +16,13 @@ const Footer = () => {
           <h3 className="font-semibold text-lg mb-2">Products</h3>
           <ul className="space-y-1 text-sm">
             <li>
-              <a
-                href="/products/stable-isotopes"
-                className=""
-              >
-                Stable Isotopes
-              </a>
+              <Link to="/products/stable-isotopes">Stable Isotopes</Link>
             </li>
             <li>
-              <a
-                href="/products/impurities"
-                className=""
-              >
-                Impurities
-              </a>
+              <Link to="/products/impurities">Impurities</Link>
             </li>
             <li>
-              <a
-                href="/products/nitrosamine"
-                className=""
-              >
-                Nitrosamine
-              </a>
+              <Link to="/products/nitrosamine">Nitrosamine</Link>
             </li>
           </ul>
         </div>
@@ -46,13 +31,8 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Services</h3>
           <ul className="space-y-1 text-sm">
-          <li>
-              <a
-                href="/customsynthesis"
-                className=""
-              >
-                Custom Synthesis
-              </a>
+            <li>
+              <Link to="/customsynthesis">Custom Synthesis</Link>
             </li>
           </ul>
         </div>
@@ -61,7 +41,9 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Company</h3>
           <ul className="space-y-1 text-sm">
-            <li>Careers</li>
+            <li>
+              <Link to="/careers">Careers</Link>
+            </li>
           </ul>
         </div>
 
@@ -69,15 +51,12 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Support</h3>
           <ul className="space-y-1 text-sm">
-          <li>
-              <a
-                href="/contactus"
-                className=""
-              >
-                Contact Us
-              </a>
+            <li>
+              <Link to="/contactus">Contact Us</Link>
             </li>
-            <li>Request a Quote</li>
+            <li>
+              <Link to="/quote">Request a Quote</Link>
+            </li>
           </ul>
         </div>
 
@@ -117,7 +96,7 @@ const Footer = () => {
             <li className="flex items-center gap-2">
               <FaEnvelope />
               <a href="mailto:info@exeluslabs.com" className="">
-              info@exeluslabs.com
+                info@exeluslabs.com
               </a>
             </li>
           </ul>
@@ -126,7 +105,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="text-center text-sm mt-6 pt-4">
-        <p>© 2025 EXELUSLABS , INC. ALL RIGHTS RESERVED. </p>
+        <p>© 2025 EXELUSLABS , INC. ALL RIGHTS RESERVED.</p>
       </div>
     </footer>
   );

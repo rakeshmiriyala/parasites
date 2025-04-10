@@ -1,14 +1,24 @@
-import React from 'react';
+import React from "react";
 
 const ContactInfo = () => {
   return (
-    <div className="flex flex-col items-end justify-end ">
+    <div className="flex flex-col items-end justify-end">
       <div className="flex flex-col md:flex-row gap-10 px-10 bg-blue-400 py-6 justify-center">
         <div className="text-center">
-          <p className="text-lg font-medium  text-black">example@email.com</p>
+          <a
+            href="mailto:info@exeluslabs.com"
+            className="text-lg font-medium text-black"
+          >
+            info@exeluslabs.com
+          </a>
         </div>
         <div className="text-center">
-          <p className="text-lg font-medium text-black">+91 9876543210</p>
+          <a
+            href="tel:+917989540212"
+            className="text-lg font-medium text-black"
+          >
+            +917989540212
+          </a>
         </div>
       </div>
     </div>

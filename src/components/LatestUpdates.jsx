@@ -2,10 +2,10 @@ import React from "react";
 import image1 from "../assets/Products/EXL-004.png";
 import image2 from "../assets/Products/EXL-002.png";
 import image3 from "../assets/Products/EXL-003.png";
-import image4 from "../assets/Products/EXL-014.png";
+import image4 from "../assets/Products/EXL-012.png";
 import image5 from "../assets/Products/EXL-005.png";
 import image6 from "../assets/Products/EXL-006.png";
-import image7 from "../assets/Products/EXL-012.png";
+import image7 from "../assets/Products/EXL-011.png";
 
 const NewsPage = () => {
   return (
@@ -35,8 +35,8 @@ const NewsPage = () => {
             },
             {
               id: 4,
-              image: image4,
-              title: "N-Nitroso Metoprolol",
+              image: image7,
+              title: "N-Nitrosodimethylamine – 13C2D6",
               desc: "Innovative formulation with enhanced stability.",
             },
           ].map((product) => (
@@ -76,8 +76,8 @@ const NewsPage = () => {
             },
             {
               id: 7,
-              image: image7,
-              title: "N-Nitrosodimethylamine – 13C2D6",
+              image: image4,
+              title: "N-Nitroso Perindopril",
               desc: "Highly stable research chemical.",
             },
           ].map((product) => (
