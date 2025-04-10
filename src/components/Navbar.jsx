@@ -62,7 +62,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white text-black p-6">
+    <nav className="bg-white text-black p-6 border-b border-gray-200">
       <div className="container mx-auto flex justify-between items-center px-8">
         <Link to="/" className="text-2xl font-bold flex items-center">
           <img src={Logo} alt="Logo" className="h-24 w-auto mr-2" />

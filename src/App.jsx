@@ -7,12 +7,16 @@ import ProductsPage from "./components/Products/Products";
 import CustomSynthesisHome from "./components/CustomSynthesis/Home";
 import QuoteRequestPage from "./components/Products/RequestQuote";
 import Quote from "./components/CustomSynthesis/Quote";
+import AboutHome from "./components/AboutUs/Home";
+import ContactHome from "./components/ContactUs/Home";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutHome/>} />
+        <Route path="/contactus" element={<ContactHome/>} />
         <Route path="/customsynthesis" element={<CustomSynthesisHome />} />
         <Route path="/customsynthesis/quote" element={<Quote />} />
         <Route path="/products" element={<ProductsPage />} />
