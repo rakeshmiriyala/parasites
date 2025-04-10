@@ -93,8 +93,8 @@ const NewsPage = () => {
           ))}
           {/* News Section with Scroll */}
           <div className="bg-gray-100 p-4 col-span-4 lg:col-span-1 h-[325px] overflow-y-auto">
-            <h3 className="text-xl font-semibold mb-2">Latest Updates</h3>
-            <div className="space-y-4">
+            <h3 className="text-xl text-center font-semibold mb-2">Latest Updates</h3>
+            {/* <div className="space-y-4">
               {[
                 {
                   title: "17th Drug Discovery Strategic Summit",
@@ -125,7 +125,7 @@ const NewsPage = () => {
                   </a>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

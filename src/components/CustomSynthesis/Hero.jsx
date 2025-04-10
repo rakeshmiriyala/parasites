@@ -14,11 +14,6 @@ const CustomSynthesis = () => {
         <h1 className="text-3xl font-bold mb-4 h-1/5 flex items-center justify-start">
           Custom Synthesis
         </h1>
-        <p className="text-lg">
-          Biosynth excels in complex and challenging custom synthesis,
-          specializing in carbohydrate and nucleoside chemistry. We solve the
-          problems others cannot.
-        </p>
       </div>
     </div>
     </>
