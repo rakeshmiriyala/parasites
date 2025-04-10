@@ -4,6 +4,7 @@ import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import sampleData from "../Data.js";
 import bgImage from "../../assets/product-1_bg.jpg";
 import Navbar from "../Navbar.jsx";
+import ContactInfo from "../ContactInfo.jsx";
 
 const ProductsPage = () => {
   const { category } = useParams();
@@ -63,28 +64,27 @@ const ProductsPage = () => {
 
   return (
     <>
+      <ContactInfo />
       <Navbar />
       <div className="flex min-h-screen">
         {/* Left Sidebar (30%) */}
         <div className="w-[30%] p-6 bg-white text-black">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <ul>
-            {[
-              "Stable isotopes",
-              "Impurities",
-              "Nitrosamine",
-            ].map((category, index) => (
-              <li key={index}>
-                <Link
-                  to={`/products/${encodeURIComponent(
-                    category.toLowerCase().replace(/\s+/g, "-")
-                  )}`}
-                  className="block p-2 hover:bg-blue-500 hover:text-white"
-                >
-                  {category}
-                </Link>
-              </li>
-            ))}
+            {["Stable isotopes", "Impurities", "Nitrosamine"].map(
+              (category, index) => (
+                <li key={index}>
+                  <Link
+                    to={`/products/${encodeURIComponent(
+                      category.toLowerCase().replace(/\s+/g, "-")
+                    )}`}
+                    className="block p-2 hover:bg-blue-500 hover:text-white"
+                  >
+                    {category}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
         {/* Right Section - Display Paginated Products (70%) */}

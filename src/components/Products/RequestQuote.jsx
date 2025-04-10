@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Navbar from "../Navbar.jsx";
+import ContactInfo from "../ContactInfo.jsx";
 
 const QuoteRequestPage = () => {
   const { catalogNumber } = useParams();
@@ -11,6 +12,7 @@ const QuoteRequestPage = () => {
 
   return (
     <>
+    <ContactInfo/>
       <Navbar />
       <div className="mx-6 p-6 bg-white">
         <h2 className="text-2xl font-bold mb-6 text-center">Request a Quote</h2>

@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import sampleData from "../Data.js";
 import Navbar from "../Navbar.jsx";
 import bgImage from "../../assets/Logo.png";
+import ContactInfo from "../ContactInfo.jsx";
 
 const DetailsPage = () => {
   const { category, name } = useParams();
@@ -32,6 +33,7 @@ const DetailsPage = () => {
 
   return (
     <>
+    <ContactInfo/>
       <Navbar />
       <div className="relative flex flex-col items-center h-screen p-8 z-0">
         <div className="absolute inset-0 flex justify-center items-center opacity-10 z-0">

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import sampleData from "../Data.js";
 import bgImage from "../../assets/product-1_bg.jpg";
 import Navbar from "../Navbar.jsx";
+import ContactInfo from "../ContactInfo.jsx";
 
 const MainPage = () => {
   const { category } = useParams(); // Get category from the URL
@@ -46,6 +47,7 @@ const MainPage = () => {
 
   return (
     <>
+    <ContactInfo/>
       <Navbar />
       <div className="flex min-h-screen">
         {/* Left Sidebar (30%) */}

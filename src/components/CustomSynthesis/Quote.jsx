@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
+import ContactInfo from "../ContactInfo";
 
 const Quote = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +27,7 @@ const Quote = () => {
 
   return (
     <>
+    <ContactInfo/>
     <Navbar/>
     <div className="items-center justify-center bg-gray-100">
       <div className="bg-white py-8 px-20 w-full">
