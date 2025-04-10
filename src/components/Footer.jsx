@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 px-4">
+    <footer className="bg-black text-white py-8 px-10">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {/* Products */}
         <div>
@@ -69,7 +69,14 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-2">Support</h3>
           <ul className="space-y-1 text-sm">
-            <li>Contact Us</li>
+          <li>
+              <a
+                href="/contactus"
+                className=""
+              >
+                Contact Us
+              </a>
+            </li>
             <li>Request a Quote</li>
           </ul>
         </div>
@@ -109,7 +116,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope />
-              <a href="info@exeluslabs.com" className="">
+              <a href="mailto:info@exeluslabs.com" className="">
               info@exeluslabs.com
               </a>
             </li>

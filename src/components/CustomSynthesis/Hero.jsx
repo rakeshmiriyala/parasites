@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../assets/product-1_bg.jpg"; // Adjust the path based on your project structure
+import bgImage from "../../assets/CustomSyntesis_bg.jpg"; // Adjust the path based on your project structure
 import Navbar from "../Navbar";
 
 const CustomSynthesis = () => {
@@ -7,7 +7,7 @@ const CustomSynthesis = () => {
     <>
     <Navbar/>
     <div
-      className="h-[250px] bg-cover bg-center flex justify-start items-center"
+      className="h-[300px] bg-cover bg-center flex justify-start items-center"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="py-6 text-white text-start lg:px-26">

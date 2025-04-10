@@ -12,14 +12,17 @@ const CustomSynthesisProcess = () => {
           Capabilities and Specialties
         </h1>
         <p className="text-md text-gray-700 leading-relaxed mb-6">
-          Our state-of-the-art synthetic chemistry laboratories based in the UK,
-          Switzerland, Slovakia, and China are equipped with modern preparative
-          and analytical equipment and predominantly PhD-qualified scientists.
-          Our expertise in carbohydrate and nucleoside chemistry is unrivaled
-          globally, and you can trust us with the design of efficient and
-          effective processes, or work with your existing methods, to produce
-          your carbohydrate or nucleoside-based pharmaceutical ingredients or
-          other complex chemical entities.
+          At Exelus Labs, our advanced synthetic chemistry laboratories are
+          outfitted with cutting-edge preparative and analytical equipment, and
+          staffed by highly qualified scientists. We offer unmatched expertise
+          in carbohydrate and nucleoside chemistry, making us a trusted partner
+          for designing efficient, scalable processes or working seamlessly with
+          your existing methods.
+        </p>
+        <p className="text-md text-gray-700 leading-relaxed mb-6">
+          Whether you need pharmaceutical ingredients or other complex chemical
+          entities, we deliver precision, reliability, and scientific
+          excellence at every step.
         </p>
       </div>
 

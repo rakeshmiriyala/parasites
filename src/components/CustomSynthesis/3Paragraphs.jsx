@@ -9,19 +9,21 @@ const Paragraphs = () => {
           Quality and Analysis
         </h1>
         <p className="text-md text-gray-700 leading-relaxed mb-6">
-          Quality is at the heart of what we do at Biosynth, from our
-          company-wide quality management system to our state-of-the art
-          laboratories and highly skilled scientists, technicians,
-          administrators and project managers.
+          At Exelus Labs, quality isn’t just a standard — it’s a core principle
+          that defines every aspect of our operations. From our comprehensive
+          quality management systems to cutting-edge laboratories and a team of
+          expert scientists, technicians, administrators, and project managers,
+          we are committed to delivering excellence.
         </p>
-        <br />
         <p className="text-md text-gray-700 leading-relaxed mb-6">
-          Our research and synthesis laboratories operate to ISO 9001:2015, with
-          rapid in-process and final product QC using our outstanding analytical
-          facilities. This helps the teams understand, optimize and finalize the
-          synthesis route for high quality products. In addition to our quality
-          certifications, we also hold all necessary licenses to manufacture,
-          store, ship and sell controlled substances.
+          Our research and synthesis facilities adhere to ISO 9001:2015
+          standards, enabling precise and efficient in-process and final product
+          quality control through advanced analytical technologies. This
+          capability allows our teams to thoroughly understand, refine, and
+          complete synthesis processes, ensuring the production of high-quality
+          outcomes. Beyond certifications, Exelus Labs is fully licensed to
+          manufacture, store, distribute, and sell controlled substances,
+          ensuring full regulatory compliance at every step.
         </p>
       </div>
       <div className="text-start px-20 ">
@@ -29,13 +31,19 @@ const Paragraphs = () => {
           Partnership and Project Management
         </h1>
         <p className="text-md text-gray-700 leading-relaxed mb-6">
-          Clear communication and partnership throughout the project is key to
-          success. In advance of project initiation, our experts evaluate
-          possible synthetic approaches for your specific challenge, assess
-          risks and prepare a detailed tailored quote including consideration of
-          documentation and QC needs. A dedicated account manager follows and
-          manages your project from start to finish, ensuring you and your team
-          stay informed and up to date as the project progresses.
+          Effective collaboration and transparent communication are integral to
+          successful project execution in chemical research and development.
+          Prior to project initiation, our scientific team conducts a thorough
+          evaluation of feasible synthetic pathways tailored to your target
+          molecule, performs risk assessments, and generates a detailed
+          proposal. This includes comprehensive documentation planning and
+          alignment with quality control (QC) specifications.
+        </p>
+        <p className="text-md text-gray-700 leading-relaxed mb-6">
+          Throughout the project lifecycle, a dedicated project manager acts as
+          your primary liaison, ensuring seamless coordination, real-time
+          updates, and alignment with technical and regulatory milestones from
+          route scouting through to final delivery.
         </p>
         <br />
       </div>
@@ -44,11 +52,11 @@ const Paragraphs = () => {
           Chemistry for All Applications
         </h1>
         <p className="text-md text-gray-700 leading-relaxed mb-6">
-          At Biosynth, we relish working on challenging projects. Our
-          custom-made molecules for our customers in pharma and diagnostics,
-          small and medium-sized enterprises (SMEs) and universities find
-          applications in a huge range of applications across research and
-          development in fields including medicines, foodstuffs, and cosmetics.
+          At Exelus Labs, we excel in tackling complex synthetic challenges. Our
+          core expertise lies in the design and synthesis of bespoke molecules
+          tailored to meet diverse R&D requirements. We collaborate with
+          partners across the pharmaceutical and diagnostic industries, as well
+          as academic and research institutions.
         </p>
       </div>
       <div className="text-start px-20 w-full">
@@ -64,7 +72,7 @@ const Paragraphs = () => {
         </ul>
       </div>
       <div className="text-start px-20 ">
-        <br/>
+        <br />
         <p className="text-md text-gray-700 leading-relaxed mb-6">
           At Biosynth, we relish working on challenging projects. Our
           custom-made molecules for our customers in pharma and diagnostics,
