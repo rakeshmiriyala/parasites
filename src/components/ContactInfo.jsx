@@ -16,10 +16,10 @@ const ContactInfo = () => {
         <div className="flex items-center gap-2">
           <MdEmail className="text-white text-lg" />
           <a
-            href="mailto:info@prasilabs.com"
+            href="mailto:info@exeluslabs.com"
             className="hover:underline text-white font-medium"
           >
-            info@prasilabs.com
+            info@exeluslabs.com
           </a>
         </div>
 
@@ -30,10 +30,10 @@ const ContactInfo = () => {
         <div className="flex items-center gap-2 pl-4">
           <MdPhone className="text-white text-lg" />
           <a
-            href="tel:+919160006515"
+            href="tel:+91 7989540212"
             className="hover:underline text-white font-medium"
           >
-            +91 9160006515
+            +91 79895 40212
           </a>
         </div>
       </div>

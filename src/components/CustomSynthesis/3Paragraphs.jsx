@@ -59,29 +59,6 @@ const Paragraphs = () => {
           as academic and research institutions.
         </p>
       </div>
-      <div className="text-start px-20 w-full">
-        <h1 className="text-md font-bold text-gray-800 mb-3">
-          Our huge range of applications include:
-        </h1>
-        {/* Unordered List (Aligned to the left) */}
-        <ul className="list-disc text-left pl-6 text-md text-gray-700 space-y-1">
-          <li>Novel research reagents</li>
-          <li>Analytical standards and reference materials</li>
-          <li>Medicinal chemistry</li>
-          <li>Regulated materials</li>
-        </ul>
-      </div>
-      <div className="text-start px-20 ">
-        <br />
-        <p className="text-md text-gray-700 leading-relaxed mb-6">
-          At Biosynth, we relish working on challenging projects. Our
-          custom-made molecules for our customers in pharma and diagnostics,
-          small and medium-sized enterprises (SMEs) and universities find
-          applications in a huge range of applications across research and
-          development in fields including medicines, foodstuffs, and cosmetics.
-        </p>
-        <br />
-      </div>
     </div>
   );
 };
