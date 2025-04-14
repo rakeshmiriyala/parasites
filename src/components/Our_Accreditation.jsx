@@ -15,7 +15,7 @@ const ImageCarousel = () => {
     dots: true,
     infinite: true,
     speed: 700,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
@@ -25,15 +25,17 @@ const ImageCarousel = () => {
   return (
     <div className="h-auto flex flex-col items-center justify-center p-6">
       <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">Our Accreditation</h1>
-      <div className="w-[600px] max-w-[900px] mx-auto">
+      <div className="w-[900px] max-w-[900px] mx-auto">
         <Slider {...settings}>
           {images.map((img, idx) => (
-            <div key={idx} className="flex justify-center items-center">
-              <img
-                src={img}
-                alt={`Slide ${idx + 1}`}
-                className="w-[600px] h-[500px]"
-              />
+            <div key={idx} className="px-3"> {/* Adds horizontal spacing between slides */}
+              <div className="flex justify-center items-center h-[500px]">
+                <img
+                  src={img}
+                  alt={`Slide ${idx + 1}`}
+                  className="w-[500px] h-full object-contain"
+                />
+              </div>
             </div>
           ))}
         </Slider>

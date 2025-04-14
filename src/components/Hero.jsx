@@ -5,7 +5,7 @@ const HeroSection = () => {
   const navigate = useNavigate(); // React Router hook for navigation
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32">
+    <div className="relative w-full h-[600px] flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-32">
       {/* Video Background */}
       <video
         autoPlay
