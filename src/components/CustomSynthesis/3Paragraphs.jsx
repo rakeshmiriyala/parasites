@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Paragraphs = () => {
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/customsynthesis/products-list");
+  };
+
   return (
     <div className="flex flex-col justify-start items-center py-6 lg:px-10">
       {/* Heading & Description */}
-      <div className="text-start px-20 ">
+      <div className="text-start px-20">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Quality and Analysis
         </h1>
@@ -25,8 +32,19 @@ const Paragraphs = () => {
           manufacture, store, distribute, and sell controlled substances,
           ensuring full regulatory compliance at every step.
         </p>
+
+        {/* Centered Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={handleRedirect}
+            className="bg-blue-600 hover:bg-blue-500 hover:cursor-pointer text-white font-semibold py-2 px-6 rounded transition duration-300"
+          >
+            Learn More
+          </button>
+        </div>
       </div>
-      <div className="text-start px-20 ">
+
+      <div className="text-start px-20 mt-10">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Partnership and Project Management
         </h1>
@@ -43,11 +61,11 @@ const Paragraphs = () => {
           Throughout the project lifecycle, a dedicated project manager acts as
           your primary liaison, ensuring seamless coordination, real-time
           updates, and alignment with technical and regulatory milestones from
-          route scouting through to final delivery.
+          route scouting through to final delivery.
         </p>
-        <br />
       </div>
-      <div className="text-start px-20 ">
+
+      <div className="text-start px-20 mt-10">
         <h1 className="text-3xl font-bold text-gray-800 mb-6">
           Chemistry for All Applications
         </h1>

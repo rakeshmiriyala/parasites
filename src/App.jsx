@@ -9,6 +9,7 @@ import QuoteRequestPage from "./components/Products/RequestQuote";
 import Quote from "./components/CustomSynthesis/Quote";
 import AboutHome from "./components/AboutUs/Home";
 import ContactHome from "./components/ContactUs/Home";
+import ProductsList from "./components/CustomSynthesis/ProductsList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/aboutus" element={<AboutHome/>} />
         <Route path="/contactus" element={<ContactHome/>} />
         <Route path="/customsynthesis" element={<CustomSynthesisHome />} />
+        <Route path="/customsynthesis/products-list" element={<ProductsList />} />
         <Route path="/customsynthesis/quote" element={<Quote />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:category" element={<MainPage />} />

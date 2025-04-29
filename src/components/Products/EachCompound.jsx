@@ -82,17 +82,18 @@ const DetailsPage = () => {
             <p className="mt-4">
               <strong>Submit Orders by Email:</strong>
               <a
-                href="mailto:orders@acanthusresearch.com"
+                href="mailto:info@exeluslabs.com"
                 className="text-blue-500"
               >
                 {" "}
-                orders@acanthusresearch.com
+                info@exeluslabs.com
               </a>
             </p>
             <p className="mt-2">
               <strong>Call Us:</strong>{" "}
-              <span className="text-gray-800">1-647-478-1021</span>
-            </p>
+              <a href="tel:+917989540212" className="text-blue-500">
+                +91 79895 40212
+              </a>            </p>
             <button
               onClick={() => navigate(`/quote-request/${item.productNumber}`)}
               className="mt-4 bg-blue-500 text-white py-2 px-4 hover:cursor-pointer hover:bg-blue-600"

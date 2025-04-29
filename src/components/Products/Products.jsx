@@ -5,15 +5,16 @@ import sampleData from "../Data.js";
 import bgImage from "../../assets/product-1_bg.jpg";
 import Navbar from "../Navbar.jsx";
 import ContactInfo from "../ContactInfo.jsx";
+import ReactPaginate from "react-paginate";
 
 const ProductsPage = () => {
   const { category } = useParams();
   const [allProducts, setAllProducts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // Number of products per page
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 10;
 
   useEffect(() => {
-    setAllProducts(sampleData); // Load all products
+    setAllProducts(sampleData);
   }, []);
 
   const decodedCategory =
@@ -28,46 +29,25 @@ const ProductsPage = () => {
       )
     : allProducts;
 
-  // Pagination logic
-  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-  const indexOfLastProduct = currentPage * itemsPerPage;
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  const indexOfLastProduct = (currentPage + 1) * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
   const currentProducts = filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
 
-  // Handle Pagination
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
-
-  // Generate Pagination Buttons
-  const generatePageNumbers = () => {
-    const pages = [];
-    if (totalPages <= 6) {
-      for (let i = 1; i <= totalPages; i++) pages.push(i);
-    } else {
-      pages.push(1, 2);
-      if (currentPage > 4) pages.push("...");
-      if (currentPage > 3 && currentPage < totalPages - 2)
-        pages.push(currentPage);
-      if (currentPage < totalPages - 3) pages.push("...");
-      pages.push(totalPages - 1, totalPages);
-    }
-    return pages;
-  };
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
   return (
     <>
       <ContactInfo />
       <Navbar />
       <div className="flex min-h-screen">
-        {/* Left Sidebar (30%) */}
+        {/* Left Sidebar */}
         <div className="w-[30%] p-6 bg-white text-black">
           <h2 className="text-xl font-semibold mb-4">Categories</h2>
           <ul>
@@ -87,7 +67,8 @@ const ProductsPage = () => {
             )}
           </ul>
         </div>
-        {/* Right Section - Display Paginated Products (70%) */}
+
+        {/* Right Section */}
         <div className="w-[70%] p-6">
           <h1 className="text-2xl font-bold mb-4">Products</h1>
           <img
@@ -95,7 +76,8 @@ const ProductsPage = () => {
             alt="Chemical Banner"
             className="w-full h-40 object-cover mb-4 rounded-md"
           />
-          {/* Display Paginated Products */}
+
+          {/* Product List */}
           <div className="space-y-6">
             {currentProducts.length > 0 ? (
               currentProducts.map((item, index) => {
@@ -126,7 +108,6 @@ const ProductsPage = () => {
                         <p>Category: {item.category}</p>
                       </div>
                     </div>
-                    {/* Horizontal Line After Each Product */}
                     {index !== currentProducts.length - 1 && (
                       <hr className="my-4 border-gray-300" />
                     )}
@@ -137,51 +118,26 @@ const ProductsPage = () => {
               <p className="text-red-500">No products available.</p>
             )}
           </div>
-          {/* Pagination Controls */}
-          <div className="flex justify-center mt-6 items-center">
-            {/* Left Arrow Button */}
-            <button
-              onClick={prevPage}
-              disabled={currentPage === 1}
-              className={`p-3 mx-2 rounded-full transition ${
-                currentPage === 1
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-blue-500 hover:bg-gray-200 cursor-pointer"
-              }`}
-            >
-              <FaArrowLeftLong size={25} />
-            </button>
-            {/* Page Number Buttons in Boxes */}
-            <div className="flex gap-2">
-              {generatePageNumbers().map((page, index) => (
-                <button
-                  key={index}
-                  onClick={() =>
-                    typeof page === "number" && setCurrentPage(page)
-                  }
-                  className={`px-4 py-2 rounded-md border ${
-                    page === currentPage
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-100 hover:bg-gray-300 text-black"
-                  } ${page === "..." ? "cursor-default" : "cursor-pointer"}`}
-                  disabled={page === "..."}
-                >
-                  {page}
-                </button>
-              ))}
-            </div>
-            {/* Right Arrow Button */}
-            <button
-              onClick={nextPage}
-              disabled={currentPage === totalPages}
-              className={`p-3 mx-2 rounded-full transition ${
-                currentPage === totalPages
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-blue-500 hover:bg-gray-200 cursor-pointer"
-              }`}
-            >
-              <FaArrowRightLong size={30} />
-            </button>
+
+          {/* React Paginate */}
+          <div className="flex justify-center mt-8 items-center">
+            <ReactPaginate
+              pageCount={totalPages}
+              onPageChange={handlePageChange}
+              forcePage={currentPage}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={1}
+              containerClassName="flex items-center gap-2"
+              pageClassName="px-3 py-1 rounded border bg-gray-100 hover:bg-gray-300 cursor-pointer"
+              activeClassName="bg-blue-500 text-white"
+              previousLabel={<FaArrowLeftLong />}
+              nextLabel={<FaArrowRightLong />}
+              previousClassName="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-blue-500"
+              nextClassName="p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-blue-500"
+              disabledClassName="text-gray-400 cursor-not-allowed"
+              breakLabel="..."
+              breakClassName="px-2"
+            />
           </div>
         </div>
       </div>
