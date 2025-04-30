@@ -20,20 +20,36 @@ const ImageCarousel = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     cssEase: 'ease-in-out',
+    responsive: [
+      {
+        breakpoint: 1024, // For tablets and below
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640, // For mobile (xs)
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="h-auto flex flex-col items-center justify-center p-6">
-      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">Our Accreditation</h1>
-      <div className="w-[900px] max-w-[900px] mx-auto">
+    <div className="h-auto flex flex-col items-center justify-center px-4 sm:px-6 xs:px-10 md:px-10 py-6">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800">
+        Our Accreditation
+      </h1>
+      <div className="w-full max-w-[900px] mx-auto">
         <Slider {...settings}>
           {images.map((img, idx) => (
-            <div key={idx} className="px-3"> {/* Adds horizontal spacing between slides */}
-              <div className="flex justify-center items-center h-[500px]">
+            <div key={idx} className="px-3">
+              <div className="flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px]">
                 <img
                   src={img}
                   alt={`Slide ${idx + 1}`}
-                  className="w-[500px] h-full object-contain"
+                  className="w-[250px] sm:w-[350px] md:w-[500px] h-full object-contain"
                 />
               </div>
             </div>

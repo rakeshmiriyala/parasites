@@ -33,7 +33,7 @@ const ContactHero = () => {
               <hr className="font-thin text-sm mb-6" />
               {/* Lower Div (for p tag and the contact details) */}
               <div className="mb-6 xs:mb-2">
-                <p className="md:text-lg sm:text-md xs:text-md text-start lg:text-lg text-gray-600 mb-6 xs:mb-4">
+                <p className="md:text-md sm:text-md xs:text-md text-start lg:text-lg text-gray-600 mb-6 xs:mb-4">
                   Let's Bring Your Requirements to Life We're excited to hear
                   about your ideas and help you turn them into reality. Whether
                   you have a specific project in mind or just want to explore

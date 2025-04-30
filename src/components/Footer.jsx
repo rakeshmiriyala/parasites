@@ -9,12 +9,12 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 px-10">
+    <footer className="bg-black text-white py-8 px-6 sm:px-8 md:px-10 lg:px-16">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {/* Products */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Products</h3>
-          <ul className="space-y-1 text-sm">
+          <h3 className="font-semibold text-lg sm:text-xl mb-2">Products</h3>
+          <ul className="space-y-1 text-sm sm:text-base">
             <li>
               <Link to="/products/stable-isotopes">Stable Isotopes</Link>
             </li>
@@ -29,8 +29,8 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Services</h3>
-          <ul className="space-y-1 text-sm">
+          <h3 className="font-semibold text-lg sm:text-xl mb-2">Services</h3>
+          <ul className="space-y-1 text-sm sm:text-base">
             <li>
               <Link to="/customsynthesis">Custom Synthesis</Link>
             </li>
@@ -39,8 +39,8 @@ const Footer = () => {
 
         {/* Company */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Company</h3>
-          <ul className="space-y-1 text-sm">
+          <h3 className="font-semibold text-lg sm:text-xl mb-2">Company</h3>
+          <ul className="space-y-1 text-sm sm:text-base">
             <li>
               <Link to="/careers">Careers</Link>
             </li>
@@ -49,8 +49,8 @@ const Footer = () => {
 
         {/* Support */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Support</h3>
-          <ul className="space-y-1 text-sm">
+          <h3 className="font-semibold text-lg sm:text-xl mb-2">Support</h3>
+          <ul className="space-y-1 text-sm sm:text-base">
             <li>
               <Link to="/contactus">Contact Us</Link>
             </li>
@@ -62,8 +62,8 @@ const Footer = () => {
 
         {/* Connect */}
         <div>
-          <h3 className="font-semibold text-lg mb-2">Connect</h3>
-          <div className="flex gap-4">
+          <h3 className="font-semibold text-lg sm:text-xl mb-2">Connect</h3>
+          <div className="flex gap-4 mb-4 sm:mb-6">
             <a
               href="https://www.instagram.com/exelus_labs?igsh=MXEyeWU2bXF0NHdhcg=="
               target="_blank"
@@ -80,24 +80,18 @@ const Footer = () => {
             </a>
           </div>
 
-          <ul className="space-y-1 text-sm mt-4">
+          <ul className="space-y-1 text-sm sm:text-base">
             <li className="flex items-center gap-2">
               <FaPhoneAlt />
-              <a href="tel:+917989540212" className="">
-                +91 79895 40212
-              </a>
+              <a href="tel:+917989540212">+91 79895 40212</a>
             </li>
             <li className="flex items-center gap-2">
               <FaPhoneAlt />
-              <a href="tel:+919709666777" className="">
-                +91 97096 66777
-              </a>
+              <a href="tel:+919709666777">+91 97096 66777</a>
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope />
-              <a href="mailto:info@exeluslabs.com" className="">
-                info@exeluslabs.com
-              </a>
+              <a href="mailto:info@exeluslabs.com">info@exeluslabs.com</a>
             </li>
           </ul>
         </div>
