@@ -31,7 +31,7 @@ const Quote = () => {
       <ContactInfo />
       <Navbar />
       <div className="flex justify-center px-4 sm:px-6 lg:px-8 py-10">
-        <div className="bg-white w-full p-6 sm:p-10">
+        <div className="bg-white w-full max-w-4xl p-6 sm:p-10">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
             Chemical Services Quote
           </h1>
