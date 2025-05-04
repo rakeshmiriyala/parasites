@@ -43,9 +43,9 @@ const Navbar = () => {
   const menuLinks = {
     Home: "/",
     Products: [
-      { name: "Stable isotopes", path: "/products/stable-isotopes" },
       { name: "Impurities", path: "/products/impurities" },
       { name: "Nitrosamine", path: "/products/nitrosamine" },
+      { name: "Stable isotopes", path: "/products/stable-isotopes" },
     ],
     CustomSynthesis: "/customsynthesis",
     AboutUs: "/aboutus",
@@ -54,13 +54,17 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white text-black border-b border-gray-300 shadow-sm">
-      <div className=" flex justify-between items-center p-4 md:px-8">
-        <Link to="/" className="flex items-center space-x-2">
-          <img src={Logo} alt="Logo" className="h-20 w-auto" />
-        </Link>
+      <div className="flex justify-between items-center w-full p-4 md:px-2 lg:px-12">
+      <Link to="/" className="flex items-center flex-shrink-0">
+  <img
+    src={Logo}
+    alt="Logo"
+    className="h-14 sm:h-16 md:h-16 lg:h-20 w-auto object-contain"
+  />
+</Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 relative text-[20px] font-medium">
+        <ul className="hidden md:flex space-x-3 lg:space-x-8 lg:text-[20px] font-medium">
           {Object.keys(menuLinks).map((menu, index) => (
             <li
               key={index}
@@ -72,14 +76,14 @@ const Navbar = () => {
                 <>
                   <Link
                     to="/products"
-                    className="hover:text-blue-600 transition duration-200"
+                    className="hover:text-blue-600 transition md:text-md duration-200"
                   >
                     Products
                   </Link>
                   <AnimatePresence>
                     {activeDropdown === menu && (
                       <motion.ul
-                        className="absolute left-0 mt-3 w-[300px] rounded-md bg-white shadow-2xl z-50 overflow-hidden"
+                        className="absolute left-0 mt-3 w-[260px] md:w-[280px] lg:w-[300px] rounded-md bg-white shadow-2xl z-50 overflow-hidden"
                         onMouseEnter={() => handleMouseEnter(menu)}
                         onMouseLeave={handleMouseLeave}
                         initial={{ opacity: 0, y: -10 }}
@@ -91,7 +95,7 @@ const Navbar = () => {
                           <li key={item.path}>
                             <Link
                               to={item.path}
-                              className="block px-4 py-3 hover:bg-gray-100 text-sm"
+                              className="block px-4 py-3 hover:bg-gray-100 text-sm lg:text-base"
                             >
                               {item.name}
                             </Link>
@@ -120,10 +124,10 @@ const Navbar = () => {
             placeholder="Search by name or CAS"
             value={searchQuery}
             onChange={handleSearch}
-            className="px-4 py-2 border rounded-md w-[240px] text-sm focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 border rounded-md w-[200px] md:w-[240px] lg:w-[300px] text-sm lg:text-base focus:ring-2 focus:ring-blue-500"
           />
           {searchResults.length > 0 && (
-            <ul className="absolute top-12 right-0 w-64 bg-white text-black rounded-md shadow-lg z-50 text-sm">
+            <ul className="absolute top-12 right-0 w-64 md:w-72 lg:w-80 bg-white text-black rounded-md shadow-lg z-50 text-sm lg:text-base">
               {searchResults.map((result) => (
                 <li
                   key={result.id}
@@ -157,13 +161,13 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden px-4 py-4 border-t border-gray-200 bg-white shadow-md"
+            className="md:hidden px-4 py-4 sm:px-6 sm:py-6 border-t border-gray-200 bg-white shadow-md"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
           >
-            <ul className="space-y-4 text-lg font-medium">
+            <ul className="space-y-4 text-md font-medium">
               {Object.keys(menuLinks).map((menu, index) => (
                 <li key={index}>
                   {menu === "Products" ? (
@@ -208,7 +212,7 @@ const Navbar = () => {
                 placeholder="Search by name or CAS"
                 value={searchQuery}
                 onChange={handleSearch}
-                className="w-full px-2 py-2 border rounded-md text-sm focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border rounded-md text-sm focus:ring-2 focus:ring-blue-500"
               />
               {searchResults.length > 0 && (
                 <ul className="absolute top-12 left-0 w-full bg-white text-black rounded-md shadow-md z-50 text-sm">

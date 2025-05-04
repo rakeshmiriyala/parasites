@@ -39,7 +39,7 @@ const Paragraphs = () => {
             onClick={handleRedirect}
             className="bg-blue-600 hover:bg-blue-500 hover:cursor-pointer text-white font-semibold py-2 px-6 rounded transition duration-300 text-sm sm:text-base"
           >
-            Learn More
+            Products
           </button>
         </div>
       </div>

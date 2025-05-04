@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import Navbar from "../Navbar";
 import ContactInfo from "../ContactInfo";
+import Footer from "../Footer";
 
 const AboutHome = () => {
   return (
@@ -9,6 +10,7 @@ const AboutHome = () => {
     <ContactInfo/>
       <Navbar />
       <Hero />
+      <Footer/>
     </>
   );
 };

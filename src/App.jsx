@@ -6,21 +6,23 @@ import DetailsPage from "./components/Products/EachCompound"; // Displays produc
 import ProductsPage from "./components/Products/Products";
 import CustomSynthesisHome from "./components/CustomSynthesis/Home";
 import QuoteRequestPage from "./components/Products/RequestQuote";
-import Quote from "./components/CustomSynthesis/Quote";
+import QuotePage from "./components/CustomSynthesis/Quote";
 import AboutHome from "./components/AboutUs/Home";
 import ContactHome from "./components/ContactUs/Home";
 import ProductsList from "./components/CustomSynthesis/ProductsList";
+import Quote from "./components/Quote";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/quote" element={<Quote />} />
         <Route path="/aboutus" element={<AboutHome/>} />
         <Route path="/contactus" element={<ContactHome/>} />
         <Route path="/customsynthesis" element={<CustomSynthesisHome />} />
         <Route path="/customsynthesis/products-list" element={<ProductsList />} />
-        <Route path="/customsynthesis/quote" element={<Quote />} />
+        <Route path="/customsynthesis/quote" element={<QuotePage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/products/:category" element={<MainPage />} />
         <Route path="/products/:category/:name" element={<DetailsPage />} />

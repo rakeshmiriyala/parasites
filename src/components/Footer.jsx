@@ -16,13 +16,13 @@ const Footer = () => {
           <h3 className="font-semibold text-lg sm:text-xl mb-2">Products</h3>
           <ul className="space-y-1 text-sm sm:text-base">
             <li>
-              <Link to="/products/stable-isotopes">Stable Isotopes</Link>
-            </li>
-            <li>
               <Link to="/products/impurities">Impurities</Link>
             </li>
             <li>
               <Link to="/products/nitrosamine">Nitrosamine</Link>
+            </li>
+            <li>
+              <Link to="/products/stable-isotopes">Stable Isotopes</Link>
             </li>
           </ul>
         </div>
