@@ -29,9 +29,11 @@ const Quote = () => {
     <>
       <ContactInfo />
       <Navbar />
-      <div className="items-center justify-center bg-gray-100">
-        <div className="bg-white py-8 px-20 w-full">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">Chemical Services Quote</h1>
+      <div className="flex justify-center px-4 sm:px-6 lg:px-8 py-10">
+        <div className="bg-white w-full max-w-4xl p-6 sm:p-10">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+            Chemical Services Quote
+          </h1>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -181,10 +183,10 @@ const Quote = () => {
             </div>
 
             {/* Submit Button */}
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-6">
               <button
                 type="submit"
-                className="px-6 py-3 hover:cursor-pointer bg-blue-600 text-white font-semibold text-lg rounded-lg hover:bg-blue-700 transition-all"
+                className="w-full sm:w-auto px-6 py-3 hover:cursor-pointer bg-blue-600 text-white font-semibold text-lg rounded-lg hover:bg-blue-700 transition-all"
               >
                 Submit Quote Request
               </button>
